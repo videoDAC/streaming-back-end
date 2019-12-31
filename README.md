@@ -51,7 +51,7 @@ __This command includes these parameters__:
 
 SUCCESS: If the platform __is working__, you __will__ see this test-card image, and the number will be incrementing every second:
 
-![Screenshot from 2019-12-31 17-18-11](https://user-images.githubusercontent.com/59374467/71627376-608aa380-2bf2-11ea-9ae3-dfb2e87a45b0.png)
+![image](https://user-images.githubusercontent.com/59374467/71633051-3a74fb80-2c12-11ea-82d7-d646022216fb.png)
 
 FAILURE: If the platform __is not working__, you __will not__ see the test card.
 
@@ -155,7 +155,7 @@ Note: `{your-key}` must be a string of text, without spaces.
 
 If you test again using the Test Suite and the same `{your-key}`, you should see that the platform is working.
 
-![Screenshot from 2019-12-31 17-18-11](https://user-images.githubusercontent.com/59374467/71627376-608aa380-2bf2-11ea-9ae3-dfb2e87a45b0.png)
+![image](https://user-images.githubusercontent.com/59374467/71633051-3a74fb80-2c12-11ea-82d7-d646022216fb.png)
 
 ***IF YOU ARE SEEING THIS TEST CARD, YOU HAVE SUCCESSFULLY SET UP A PERMISSIONLESS DIGITAL STAGE.***
 
