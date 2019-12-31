@@ -1,6 +1,6 @@
 # _Permissionless Digital Stage_
 
-_Permissionless Digital Stage_ is a platform which allows anyone on the network to transiently stream (audio-visual) AV digital content, without requiring permission.
+_Permissionless Digital Stage_ is a platform which allows anyone connected to your network to transiently stream (audio-visual) AV digital content, without requiring permission.
 
 # Specific description
 
@@ -10,7 +10,7 @@ Anyone who has access to the server can:
 
 - stream AV content _to_ the _Permissionless Digital Stage_
 
-- stream AV content _from_ the _Permissionless Digital Stage_
+- stream AV content _from_ the _Permissionless Digital Stage_ for viewing
 
 # Special feature
 
@@ -18,11 +18,11 @@ The platform will also "shrink" AV digital content into "lighter" formats.
 
 This has the following advantages for viewers:
 
-- Faster load time - the stream starts straight away, because less data is required (up to 900x less)
+- __Faster load time__ - the stream starts straight away, because less data is required (up to 900x less)
 
-- Lower bandwidth requirements - making it possible to watch on slow connections (e.g. 2G, 3G, 3.5G)
+- __Lower bandwidth requirements__ - making it possible to watch on slow connections (e.g. 2G, 3G, 3.5G)
 
-- Lower power requirements - making it possible to watch on weaker, older devices (e.g. old smartphones)
+- __Lower power requirements__ - making it possible to watch on weaker, older devices (e.g. old smartphones)
 
 This generally makes it much easier for streamers to quickly reach larger audiences.
 
@@ -70,42 +70,48 @@ The following diagram shows the platform's logical architecture.
  tar -xzf livepeer-linux-amd64.tar.gz
  ```
 
-- Set up the following screens using `screen`
-
-`screen -DR transcoder`
-`screen -DR orchestrator`
 `screen -DR broadcaster`
 `screen -DR publisher`
 
-- In the `orchestrator` screen, run the following command:
+- Run `screen -DR orchestrator`
+
+- Run the following command in the `orchestrator` screen:
 
 `./livepeer-linux-amd64/livepeer -orchestrator -cliAddr 127.0.0.1:7936  -httpAddr 127.0.0.1:8936 -serviceAddr 127.0.0.1:8936 -orchSecret secret -v 99
 `
+- `ctrl-A-D` to exist the `orchestrator` screen
 
-This starts the orchestrator service, which manages the transcoding services
+- Run `screen -DR transcoder`
 
-- In the `transcoder` screen, run the following command:
+- Run the following command in the `transcoder` screen:
 
 `./livepeer-linux-amd64/livepeer -transcoder -cliAddr 127.0.0.1:7937  -httpAddr 127.0.0.1:8937 -orchAddr 127.0.0.1:8936 -orchSecret secret -v 99`
 
-This starts the transcoding service, which "shrinks" AV digital content into "lighter" formats. `-v` is the logging level.
+- `ctrl-A-D` to exist the `transcoder` screen
 
-- In the `broadcaster` screen run the following command:
+- Run `screen -DR broadcaster`
+
+- Run the following command in the `broadcaster` screen:
 
 `./livepeer-linux-amd64/livepeer -broadcaster -cliAddr 127.0.0.1:7935 -rtmpAddr 127.0.0.1:1935 -httpAddr 0.0.0.0:8935 -orchAddr 127.0.0.1:8936 -transcodingOptions P144p30fps16x9 -v 99
 `
+- `ctrl-A-D` to exist the `broadcaster` screen
 
-- In the `publisher` screen run the following command:
+- Run `screen -DR publisher`
+
+- Run the following command in the `publisher` screen:
 
 `ffmpeg -re -f lavfi -i testsrc=size=426x240:rate=30,format=yuv420p -f lavfi -i sine -threads 1 -c:v libx264 -b:v 10000k -preset ultrafast -x264-params keyint=30 -c:a aac -f flv rtmp://localhost:1935/{your-key}`
 
-`{your-key}` is a string of text, without spaces, that you must create
+Note: `{your-key}` is a string of text, without spaces, that you must create
+
+## Test Again
 
 If you now re-run your test suite, you should see that the platform is working.
 
 ![Screenshot from 2019-12-31 17-18-11](https://user-images.githubusercontent.com/59374467/71627376-608aa380-2bf2-11ea-9ae3-dfb2e87a45b0.png)
 
-# Upgrade Roadmap
+# Future Roadmap
 
 This section explains some areas where this platform could be upgraded.
 
@@ -122,6 +128,14 @@ All contributions welcome!
 All contributions welcome!
 
 ## Testing with OBS
+
+All contributions welcome
+
+## Mobile App
+
+- MVP: 1) tap launcher to turn on channel, 2. tap screen to turn off channel
+
+- Extra - integrate with payment channels for paying for content
 
 # About _Permissionless Digital Stage_
 
