@@ -142,7 +142,7 @@ screen -DR publisher
 - Run the following command in the `publisher` screen:
 
 ```
-ffmpeg -re -f lavfi -i testsrc=size=426x240:rate=30,format=yuv420p -f lavfi -i sine -threads 1 -c:v libx264 -b:v 10000k -preset ultrafast -x264-params keyint=30 -c:a aac -f flv rtmp://127.0.0.1:1935/beacon_stream
+ffmpeg -re -f lavfi -i testsrc=size=426x240:rate=30,format=yuv420p -f lavfi -i sine -threads 1 -c:v libx264 -b:v 10000k -preset ultrafast -x264-params keyint=30 -c:a aac -f flv rtmp://127.0.0.1:1935/{your-key}
 ```
 
 Note: `{your-key}` must be a string of text, without spaces.
@@ -153,9 +153,11 @@ If you test again using the Test Suite and the same `{your-key}`, you should see
 
 ***IF YOU ARE SEEING THIS TEST CARD, YOU HAVE SUCCESSFULLY SET UP A PERMISSIONLESS DIGITAL STAGE.***
 
-You can now learn [how to publish more interesting content onto a Permissionless Digital Stage](https://github.com/criticaltv/permissionless-digital-stage/blob/master/PUBLISHER.md).
+## Further reading
 
-You can also view [the current roadmap for evolving Permissionless Digital Stage](https://github.com/criticaltv/permissionless-digital-stage/blob/master/ROADMAP.md).
+You can now learn [how to publish more interesting content onto a Permissionless Digital Stage](./PUBLISHER.md).
+
+You can also view [the current roadmap for evolving Permissionless Digital Stage](./ROADMAP.md).
 
 ## About _Permissionless Digital Stage_
 
