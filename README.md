@@ -159,83 +159,9 @@ If you test again using the Test Suite and the same `{your-key}`, you should see
 
 ***IF YOU ARE SEEING THIS TEST CARD, YOU HAVE SUCCESSFULLY SET UP A PERMISSIONLESS DIGITAL STAGE.***
 
-# Future Roadmap
+You can now learn [how to publish more interesting content onto a Permissionless Digital Stage](https://github.com/criticaltv/permissionless-digital-stage/blob/master/PUBLISHER.md).
 
-This section explains some areas where this platform could be upgraded.
-
-## Outsource your Transcoding to Livepeer
-
-Livepeer is an protocol providing Open-Source Video Infrastructure Services using Ethereum for payment clearing.
-
-Livepeer's protocol and cryptocurrency govern a transcoding marketplace where broadcasters can buy and sell transcoding services for Ethereum crypto currency.
-
-This section will explain how to configure your Permissionless Digital Stage to use these services.
-
-## Deploying on a Raspberry Pi
-
-The binaries from Livepeer releases are compiled for a x86 chipset.
-
-We would need to compile some binaries for the RPi, but otherwise everything else should be the same.
-
-## Configuring for IPV6
-
-All contributions welcome!
-
-## Access Control
-
-Currently, any client which has access to the server can stream into it or out of it.
-
-This topic is to investigate how to set up MVP access control.
-
-## Distribute transcoding to host with GPU
-
-If you have GPUs available, you can configure your transcoder process to use these.
-
-## Using encoder (e.g. OBS Studio) instead of -publisher
-
-[OBS Studio](https://obsproject.com/) is free and open-source software capable of publishing RTMP content.
-
-This can be used instead of the `-publisher` to stream richer content.
-
-### How
-
-- Download and install OBS Studio
-
-- Set up a Custom Server with your `{server-ip-address}` and your `{your key}` (required)
-
-![Screenshot from 2019-12-31 20-25-55](https://user-images.githubusercontent.com/59374467/71631999-507fbd80-2c0c-11ea-8929-c9ef147cbaac.png)
-
-- Set the keyframe interval to `1` (required)
-
-![Screenshot from 2019-12-31 20-28-30](https://user-images.githubusercontent.com/59374467/71632001-507fbd80-2c0c-11ea-8b6f-e128af95b0ab.png)
-
-- Set the frame size to 426x240 (240p) (recommended)
-
-![Screenshot from 2019-12-31 20-28-20](https://user-images.githubusercontent.com/59374467/71632000-507fbd80-2c0c-11ea-9699-a0686d9bc5a8.png)
-
-- Add some content to your OBS
-
-  - Click the + to add a source of content
-  
-  ![image](https://user-images.githubusercontent.com/59374467/71632396-a6556500-2c0e-11ea-8f28-f0de09d79905.png)
-
-  - Select "Test (Freetype 2)"
-  
-  ![image](https://user-images.githubusercontent.com/59374467/71632261-de0fdd00-2c0d-11ea-9247-7e0dee287b92.png)
-
-  - Type "HELLO WORLD"
-  
-  ![image](https://user-images.githubusercontent.com/59374467/71632229-b7ea3d00-2c0d-11ea-8b08-4147e53ab443.png)
-
-  - Click "Start Streaming"
-  
-  ![image](https://user-images.githubusercontent.com/59374467/71632290-0992c780-2c0e-11ea-8ae9-b04e9a17e8cf.png)
-
-## Mobile App
-
-- MVP: 1) tap launcher to turn on channel, 2. tap screen to turn off channel
-
-- Extra - integrate with payment channels for paying for content
+You can also view [the current roadmap for evolving Permissionless Digital Stage](https://github.com/criticaltv/permissionless-digital-stage/blob/master/ROADMAP.md).
 
 # About _Permissionless Digital Stage_
 
