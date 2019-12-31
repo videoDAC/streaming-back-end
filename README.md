@@ -40,26 +40,26 @@ To operate a _Permissionless Digital Stage_, you will need:
 
 ### Test suite
 
-The test suite for this platform is to run the following command. __This command includes some parameters__:
+The test suite for this platform is to run the following command.
 
 `ffplay http://{server-ip-address):8935/stream/{your-key}/P144p30fps16x9.m3u8`
 
-This command contains the following parameters:
+__This command includes these parameters__:
 
 - `{server-ip-address)` is the IP address of the server, which you must provide
 - `{your-key}` a string of text, without spaces, that you must create
 
-If platform __is working__, you __will__ see this test-card image, and the number will be incrementing every second:
+SUCCESS: If the platform __is working__, you __will__ see this test-card image, and the number will be incrementing every second:
 
 ![Screenshot from 2019-12-31 17-18-11](https://user-images.githubusercontent.com/59374467/71627376-608aa380-2bf2-11ea-9ae3-dfb2e87a45b0.png)
 
-If platform __is not working__, you __will not__ see the test card.
+FAILURE: If the platform __is not working__, you __will not__ see the test card.
 
 ### Build the platform
 
-#### Platform architecture
+This sections helps you to build the platform.
 
-##### Logical architecture
+#### Platform architecture
 
 The following diagram shows the platform's logical architecture.
 
