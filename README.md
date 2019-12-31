@@ -1,6 +1,6 @@
 # _Permissionless Digital Stage_
 
-_Permissionless Digital Stage_ is a platform which allows anyone connected to your network to transiently stream (audio-visual) AV digital content, without requiring permission.
+_Permissionless Digital Stage_ is a platform which allows anyone connected to your network to transiently stream (audio-visual) AV digital content, without permission.
 
 ## Specific description
 
@@ -76,8 +76,13 @@ The following diagram shows the platform's logical architecture.
  tar -xzf livepeer-linux-amd64.tar.gz
  ```
  
-- Run `screen -DR orchestrator`
-  - Install `screen` with `sudo apt install screen`
+- Run the following command to attach a new `screen`
+
+```
+screen -DR orchestrator
+```
+
+Note, if `screen` is not installed, use `sudo apt install screen`
 
 - Run the following command in the `orchestrator` screen:
 
@@ -93,23 +98,31 @@ The following diagram shows the platform's logical architecture.
 
 - `ctrl-A-D` to exit the `orchestrator` screen
 
-- Run `screen -DR transcoder`
+- Run the following command to attach a new `screen`
+
+```
+screen -DR transcoder
+```
 
 - Run the following command in the `transcoder` screen:
 
 ```
 ./livepeer-linux-amd64/livepeer
-   -transcoder 
-   -cliAddr 127.0.0.1:7937  
-   -httpAddr 127.0.0.1:8937 
-   -orchAddr 127.0.0.1:8936 
-   -orchSecret secret 
+   -transcoder
+   -cliAddr 127.0.0.1:7937
+   -httpAddr 127.0.0.1:8937
+   -orchAddr 127.0.0.1:8936
+   -orchSecret secret
    -v 99
 ```
 
-- `ctrl-A-D` to exit the `transcoder` screen
+- Hold `ctrl-A-D` to exit the `transcoder` screen
 
-- Run `screen -DR broadcaster`
+- Run the following command to attach a new `screen`
+
+```
+screen -DR broadcaster
+```
 
 - Run the following command in the `broadcaster` screen:
 
@@ -126,7 +139,11 @@ The following diagram shows the platform's logical architecture.
 
 - `ctrl-A-D` to exit the `broadcaster` screen
 
-- Run `screen -DR publisher`
+- Run the following command to attach a new `screen`
+
+```
+screen -DR publisher
+```
 
 - Run the following command in the `publisher` screen:
 
@@ -139,6 +156,8 @@ Note: `{your-key}` must be a string of text, without spaces.
 If you test again using the Test Suite and the same `{your-key}`, you should see that the platform is working.
 
 ![Screenshot from 2019-12-31 17-18-11](https://user-images.githubusercontent.com/59374467/71627376-608aa380-2bf2-11ea-9ae3-dfb2e87a45b0.png)
+
+***IF YOU ARE SEEING THIS TEST CARD, YOU HAVE SUCCESSFULLY SET UP A PERMISSIONLESS DIGITAL STAGE.***
 
 # Future Roadmap
 
