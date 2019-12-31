@@ -1,3 +1,5 @@
+![image](https://user-images.githubusercontent.com/59374467/71633256-79578100-2c13-11ea-8181-33099fc50823.png)
+
 # _Permissionless Digital Stage_
 
 _Permissionless Digital Stage_ is a platform which allows anyone connected to your network to transiently stream (audio-visual) AV digital content, without permission.
