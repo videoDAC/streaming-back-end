@@ -163,6 +163,6 @@ You can now learn [how to publish more interesting content onto a Permissionless
 
 You can also view [the current roadmap for evolving Permissionless Digital Stage](https://github.com/criticaltv/permissionless-digital-stage/blob/master/ROADMAP.md).
 
-# About _Permissionless Digital Stage_
+## About _Permissionless Digital Stage_
 
 _Permissionless Digital Stage_ is a [Video DAC](https://github.com/videodac) project, part of [Livepeer](https://github.com/livepeer) project on [Ethereum](https://github.com/ethereum).
