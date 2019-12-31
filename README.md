@@ -14,9 +14,9 @@ Anyone who has access to the server can:
 
 ### Special feature
 
-The platform will also "shrink" AV digital content into "lighter" formats.
+The platform will also "shrink" AV digital content into "lighter" formats. This is also known as "Transcoding".
 
-This has the following advantages for viewers:
+Transcoding has the following advantages for viewers:
 
 - __Faster load time__ - the stream starts straight away, because less data is required (up to 900x less)
 
@@ -24,7 +24,7 @@ This has the following advantages for viewers:
 
 - __Lower power requirements__ - making it possible to watch on weaker, older devices (e.g. old smartphones)
 
-This generally makes it much easier for streamers to quickly reach larger audiences.
+Transcoding makes it much easier for streamers to quickly reach larger audiences.
 
 ## Installation and Testing
 
@@ -42,7 +42,7 @@ To operate a _Permissionless Digital Stage_, you will need:
 
 The test suite for this platform is to run the following command. __This command includes some parameters__:
 
-`ffplay http://{server-ip-address):8935/stream/{key}/P144p30fps16x9.m3u8`
+`ffplay http://{server-ip-address):8935/stream/{your-key}/P144p30fps16x9.m3u8`
 
 This command contains the following parameters:
 
@@ -131,25 +131,12 @@ The following diagram shows the platform's logical architecture.
 - Run the following command in the `publisher` screen:
 
 ```
-ffmpeg
-   -re 
-   -f lavfi 
-   -i testsrc=size=426x240:rate=30,format=yuv420p 
-   -i sine
-   -threads 1
-   -c:v libx264
-   -b:v 10000k
-   -preset ultrafast
-   -x264-params keyint=30
-   -c:a aac
-   -f flv rtmp://localhost:1935/{your-key}
+ffmpeg -re -f lavfi -i testsrc=size=426x240:rate=30,format=yuv420p -f lavfi -i sine -threads 1 -c:v libx264 -b:v 10000k -preset ultrafast -x264-params keyint=30 -c:a aac -f flv rtmp://127.0.0.1:1935/beacon_stream
 ```
 
 Note: `{your-key}` must be a string of text, without spaces.
 
-#### Test Again
-
-If you now re-run your test suite, you should see that the platform is working.
+If you test again using the Test Suite and the same `{your-key}`, you should see that the platform is working.
 
 ![Screenshot from 2019-12-31 17-18-11](https://user-images.githubusercontent.com/59374467/71627376-608aa380-2bf2-11ea-9ae3-dfb2e87a45b0.png)
 
@@ -157,25 +144,73 @@ If you now re-run your test suite, you should see that the platform is working.
 
 This section explains some areas where this platform could be upgraded.
 
-## Outsource your Transcoding and pay with Ethereum
+## Outsource your Transcoding to Livepeer
 
-If you do not have specialist equipment for Transcoding, you may evolve your configuration to outsource the transcoding to a third party transcoder. In this section, we will explain how.
+Livepeer is an protocol providing Open-Source Video Infrastructure Services using Ethereum for payment clearing.
+
+Livepeer's protocol and cryptocurrency govern a transcoding marketplace where broadcasters can buy and sell transcoding services for Ethereum crypto currency.
+
+This section will explain how to configure your Permissionless Digital Stage to use these services.
+
+## Deploying on a Raspberry Pi
+
+The binaries from Livepeer releases are compiled for a x86 chipset.
+
+We would need to compile some binaries for the RPi, but otherwise everything else should be the same.
 
 ## Configuring for IPV6
 
 All contributions welcome!
 
-## Whitelisting IP Addresses
+## Access Control
 
-All contributions welcome!
+Currently, any client which has access to the server can stream into it or out of it.
+
+This topic is to investigate how to set up MVP access control.
 
 ## Distribute transcoding to host with GPU
 
-All contributions welcome!
+If you have GPUs available, you can configure your transcoder process to use these.
 
-## Testing with OBS
+## Using encoder (e.g. OBS Studio) instead of -publisher
 
-All contributions welcome
+[OBS Studio](https://obsproject.com/) is free and open-source software capable of publishing RTMP content.
+
+This can be used instead of the `-publisher` to stream richer content.
+
+### How
+
+- Download and install OBS Studio
+
+- Set up a Custom Server with your `{server-ip-address}` and your `{your key}` (required)
+
+![Screenshot from 2019-12-31 20-25-55](https://user-images.githubusercontent.com/59374467/71631999-507fbd80-2c0c-11ea-8929-c9ef147cbaac.png)
+
+- Set the keyframe interval to `1` (required)
+
+![Screenshot from 2019-12-31 20-28-30](https://user-images.githubusercontent.com/59374467/71632001-507fbd80-2c0c-11ea-8b6f-e128af95b0ab.png)
+
+- Set the frame size to 426x240 (240p) (recommended)
+
+![Screenshot from 2019-12-31 20-28-20](https://user-images.githubusercontent.com/59374467/71632000-507fbd80-2c0c-11ea-9699-a0686d9bc5a8.png)
+
+- Add some content to your OBS
+
+  - Click the + to add a source of content
+  
+  ![image](https://user-images.githubusercontent.com/59374467/71632396-a6556500-2c0e-11ea-8f28-f0de09d79905.png)
+
+  - Select "Test (Freetype 2)"
+  
+  ![image](https://user-images.githubusercontent.com/59374467/71632261-de0fdd00-2c0d-11ea-9247-7e0dee287b92.png)
+
+  - Type "HELLO WORLD"
+  
+  ![image](https://user-images.githubusercontent.com/59374467/71632229-b7ea3d00-2c0d-11ea-8b08-4147e53ab443.png)
+
+  - Click "Start Streaming"
+  
+  ![image](https://user-images.githubusercontent.com/59374467/71632290-0992c780-2c0e-11ea-8ae9-b04e9a17e8cf.png)
 
 ## Mobile App
 
