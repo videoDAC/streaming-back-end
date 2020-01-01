@@ -44,6 +44,8 @@ The test suite for this platform is to run the following command.
 
 `ffplay http://{server-ip-address):8935/stream/{your-key}/P144p30fps16x9.m3u8`
 
+`ffplay` is part of `ffmpeg`. You can install `ffmpeg` with `sudo apt install ffmpeg`.
+
 __This command includes these parameters__:
 
 - `{server-ip-address)` is the IP address of the server, which you must provide
@@ -142,7 +144,7 @@ screen -DR publisher
 - Run the following command in the `publisher` screen:
 
 ```
-ffmpeg -re -f lavfi -i testsrc=size=426x240:rate=30,format=yuv420p -f lavfi -i sine -threads 1 -c:v libx264 -b:v 10000k -preset ultrafast -x264-params keyint=30 -c:a aac -f flv rtmp://127.0.0.1:1935/{your-key}
+ffmpeg -re -f lavfi -i testsrc=size=426x240:rate=30,format=yuv420p -f lavfi -i sine -threads 1 -c:v libx264 -b:v 10000k -preset ultrafast -x264-params keyint=30 -strict -2 -c:a aac -f flv rtmp://127.0.0.1:1935/{your-key}
 ```
 
 Note: `{your-key}` must be a string of text, without spaces.
