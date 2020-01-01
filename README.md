@@ -127,7 +127,7 @@ screen -DR broadcaster
    -broadcaster
    -currentManifest
    -cliAddr 127.0.0.1:7935 
-   -rtmpAddr 127.0.0.1:1935 
+   -rtmpAddr 0.0.0.0:1935 
    -httpAddr 0.0.0.0:8935 
    -orchAddr 127.0.0.1:8936 
    -transcodingOptions P144p30fps16x9 
