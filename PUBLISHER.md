@@ -42,3 +42,6 @@ This can be used instead of the `-publisher` to stream richer content.
   
   ![image](https://user-images.githubusercontent.com/59374467/71632290-0992c780-2c0e-11ea-8ae9-b04e9a17e8cf.png)
 
+Your stream will be available at
+
+`http://{server-ip-address}:8935/stream/{your key}`
