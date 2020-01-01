@@ -38,12 +38,14 @@ This can be used instead of the `-publisher` to stream richer content.
   
   ![image](https://user-images.githubusercontent.com/59374467/71632229-b7ea3d00-2c0d-11ea-8b08-4147e53ab443.png)
 
-  - You must change 1 setting on your Permissionless Digital Stage, which is to change the `-rtmpAddr 127.0.0.1:1935` to `-rtmpAddr 0.0.0.0:1935` for the broadcaster. Don't forget to restart the publisher too.
-
   - Click "Start Streaming"
   
   ![image](https://user-images.githubusercontent.com/59374467/71632290-0992c780-2c0e-11ea-8ae9-b04e9a17e8cf.png)
 
-Your stream will be available at
+Your stream will be available at:
 
 `http://{server-ip-address}:8935/stream/{your key}`
+
+This is best viewed on mobile, but also can be viewed via VLC on a laptop.
+
+If you use ffmpeg, you can run `ffmpeg http://{server-ip-address}:8935/stream/{your key}` in Terminal.
