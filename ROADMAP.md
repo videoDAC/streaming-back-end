@@ -32,6 +32,9 @@ If you have GPUs available, you can configure your transcoder process to use the
 
 ## Mobile App
 
-- MVP: 1) tap launcher to turn on channel, 2. tap screen to turn off channel
-
-- Extra - integrate with payment channels for paying for content
+- A MVP app for this would be:
+  - 1 app per channel - e.g. Critical TV Mobile App with launcher icon.
+  - User taps launcher icon, this turns `on` the "TV", starts paying Critical TV
+  - User taps screen, this turns `off` the "TV", stop paying.
+  - For first time usage, just show ETH burner address, 0 balance.
+  - Maybe also show on screen balance when "TV" is `on`.
