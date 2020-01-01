@@ -125,6 +125,7 @@ screen -DR broadcaster
 ```
 ./livepeer-linux-amd64/livepeer
    -broadcaster
+   -currentManifest
    -cliAddr 127.0.0.1:7935 
    -rtmpAddr 127.0.0.1:1935 
    -httpAddr 0.0.0.0:8935 
@@ -154,6 +155,18 @@ If you test again using the Test Suite and the same `{your-key}`, you should see
 ![image](https://user-images.githubusercontent.com/59374467/71633051-3a74fb80-2c12-11ea-82d7-d646022216fb.png)
 
 ***IF YOU ARE SEEING THIS TEST CARD, YOU HAVE SUCCESSFULLY SET UP A PERMISSIONLESS DIGITAL STAGE.***
+
+## For Developing Video Applications
+
+There is a test platform available to use to develop applications against.
+
+These are available by running these command:
+
+`ffplay http://52.29.226.43:8935/stream/hello_world/P144p30fps16x9.m3u8`
+`ffplay http://52.29.226.43:8935/stream/hello_world/source.m3u8`
+`ffplay http://52.29.226.43:8935/stream/current.m3u8`
+
+If this signal is not working, please contact [the videoDAC community on Telegram](https://t.me/videoDAC).
 
 ## Further reading
 
