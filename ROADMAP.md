@@ -4,6 +4,18 @@ This section explains some areas where this platform could be upgraded.
 
 ## Product Ideas
 
+### Single Channel Burner Wallet Web App
+
+Rough sketch of user journey:
+
+- User loads e.g. http://criticaltv.videodac.eth.link
+- This loads a page from IPFS containing:
+  - a Video Player
+  - a Burner Wallet
+- User presses play
+- If Burner balance > 0, play video, show balance, and pay to criticaltv.videodac.eth
+- If Burner balance = 0, do not play video, do not pay to anyone.
+
 ### Mobile App
 
 - A MVP app for this would be:
