@@ -20,6 +20,17 @@ We would need to compile some binaries for the RPi, but otherwise everything els
 
 All contributions welcome!
 
+## Containerising
+
+Various different suggestions here to replace the use of `screen`.
+
+`screen` was originally chosen for ease of entry - to help anyone get started, without needing to know about more complex solutions.
+
+Research needs to go into the following potential options:
+
+- Docker
+- SupervisorD
+
 ## Access Control
 
 Currently, any client which has access to the server can stream into it or out of it.
