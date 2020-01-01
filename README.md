@@ -181,4 +181,4 @@ You can also view [the current roadmap for evolving Permissionless Digital Stage
 
 _Permissionless Digital Stage_ is a [Video DAC](https://github.com/videodac) project, part of [Livepeer](https://github.com/livepeer) project on [Ethereum](https://github.com/ethereum).
 
-You can donate to [Video DAC using Aragon](https://mainnet.aragon.org/#/video/0x296ce9f234cd756861f30ff32bfd2198b890e44b/).
+You can donate to Permissionless Digital Stage at 0x2E8c5f8eA1E5F4d9d8c7cd02315F33cfD80eB994.
