@@ -51,7 +51,7 @@ __This command includes these parameters__:
 - `{server-ip-address)` is the IP address of the server, which you must provide
 - `{your-key}` a string of text, without spaces, that you must create
 
-SUCCESS: If the platform __is working__, you __will__ see this test-card image, and the number will be incrementing every second:
+SUCCESS: If the platform __is working__, you __will__ see this test-card image with a monotone audio signal, and the number will be incrementing every second:
 
 ![image](https://user-images.githubusercontent.com/59374467/71633051-3a74fb80-2c12-11ea-82d7-d646022216fb.png)
 
