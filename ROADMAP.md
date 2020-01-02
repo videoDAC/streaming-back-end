@@ -29,20 +29,38 @@ This is further discussed in [this issue](https://github.com/criticaltv/infinite
 
 ### Critical TV Box (or dAppNode)
 
-A beautifully designed device, to sit under a TV screen. This could perhaps use a Raspberry Pi as it's board. 
+A beautifully designed device, to live under or behind a TV screen. This could perhaps use a Raspberry Pi as its board. Perhaps it can attach to the wall. Also, it could integrate into something like a Google Chromecast HDMI dongle, perhaps controlled by smartphone.
 
 #### User Journey
 
-- User plugs in to
+- User plugs box in to:
   - the big screen via HDMI.
   - a network cable connection with internet access.
-  - the power supply.
-- User turns box on, screen displays 0 balance and Burner Wallet Address + QR code
-  - Burner Wallet has non-zero balance, streaming of video __starts__, streaming of payment to publisher __starts__
-  - Burner Wallet has zero balance, streaming of payment __stops__, streaming of video __stops__
-- User turns box off, streaming of payment __stops__, streaming of video __stops__
+  - a USB power supply.
+- User turns box on, playback of live streaming video __starts__
+- User turns box off, playback of live streaming video __stops__
+
+### Wallet Integration
 
 ## Infrastructure Level Upgrades
+
+### Run as a single process
+
+For ease of deployment, it would be very convenient to be able to run the entire _Infinite Permissionless Digital Stage_ as a single process, e.g. by running:
+
+```
+./livepeer
+    -httpAddr 0.0.0.0:8935
+    -rtmpAddr 0.0.0.0:1935
+    -publishingOptions P1080p30fps16x9
+    -transcodingOptions P144p30fps16x9 
+```
+
+### Deploying on a Raspberry Pi
+
+The binaries from Livepeer releases are compiled for a x86 chipset.
+
+We would need to compile some binaries for the RPi, but otherwise everything else should be the same.
 
 ### Outsource your Transcoding to Livepeer
 
@@ -51,12 +69,6 @@ Livepeer is an protocol providing pay-as-you-go Open-Source Video Infrastructure
 Livepeer's protocol and cryptocurrency govern a transcoding marketplace where broadcasters can buy and sell transcoding services from GPU Miners in exchange for Ethereum crypto currency.
 
 This section will explain how to configure your Permissionless Digital Stage to use these services.
-
-### Deploying on a Raspberry Pi
-
-The binaries from Livepeer releases are compiled for a x86 chipset.
-
-We would need to compile some binaries for the RPi, but otherwise everything else should be the same.
 
 ### Configuring for IPv6
 
