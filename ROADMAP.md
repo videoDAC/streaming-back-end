@@ -2,19 +2,7 @@
 
 This section explains some areas where this platform could be upgraded.
 
-## Product Ideas
-
-### Single Channel Burner Wallet Web App
-
-Rough sketch of user journey:
-
-- User loads e.g. http://criticaltv.videodac.eth.link
-- This loads a page from IPFS containing:
-  - a Video Player
-  - a Burner Wallet
-- User presses play
-- If Burner balance > 0, play video, show balance, and pay to criticaltv.videodac.eth
-- If Burner balance = 0, do not play video, do not pay to anyone.
+## Viewer Product
 
 ### Mobile App
 
@@ -40,9 +28,66 @@ A beautifully designed device, to live under or behind a TV screen. This could p
 - User turns box on, playback of live streaming video __starts__
 - User turns box off, playback of live streaming video __stops__
 
+### Stream Layering
+
+This feature would allow a viewer to request to watch 2 streams layered on top of each other.
+
+So, for example, `publisher 0` publishes a stream of 500x500 black content
+
+![image](https://user-images.githubusercontent.com/59374467/71674822-98bded80-2d7c-11ea-9818-25970c4c5e81.png)
+
+Then `publisher 1` publishes HELLO in red text on a transparent backgroun:
+
+![image](https://user-images.githubusercontent.com/59374467/71674945-f6523a00-2d7c-11ea-991f-a871bae2736c.png)
+
+Then, `viewer 0` requests to watch `publisher 1`'s streaming content layered on top of `publisher 0`'s streaming content:
+
+![hello_layered](https://user-images.githubusercontent.com/59374467/71675146-74164580-2d7d-11ea-85b9-d5847ba85ed8.png)
+
+## Publisher Product
+
+### Rebadged OBS Studio
+
+Contribute functionality to [OBS Studio](https://obsproject.com/) which makes it really easy for publishers to stream to any available _Infinite Permissionless Digital Stage_.
+
+Some potential features of an MVP:
+
+- Publisher installs OBS with this feature enabled
+- Publisher enters their `{your-key}`
+- Publisher enters their `{server-ip-address}`
+- Sets keyframe interval to 2s
+- Publisher clicks "Start steaming"
+- Application streams the canvas 
+- Viewer can watch at http://{server-ip-address}:8935/stream/{your-key}/source.m3u8
+
+Some potential enhancements:
+
+- Query a dynamic onchain registry of rtmp endpoints for {server-address}, to provide publisher with list of stages they can publish on
+- Perhaps even embed an _Infinite Permissionless Digital Stage_ inside OBS, and start streaming to it when you open OBS.
+
 ### Wallet Integration
 
-## Infrastructure Level Upgrades
+If the playback of content can be linked to an Ethereum wallet, this can result in peer-to-peer payment direct from viewer to publisher in real time.
+
+#### Single Channel Burner Wallet Web App
+
+Rough sketch of user journey:
+
+- User loads e.g. http://criticaltv.videodac.eth.link
+- This loads a page from IPFS containing:
+  - a Video Player
+  - a Burner Wallet
+- User presses play
+- If Burner balance > 0, play video, show balance, and pay to criticaltv.videodac.eth
+- If Burner balance = 0, do not play video, do not pay to anyone.
+
+## Stage Operator Product
+
+### Content Index
+
+Create an index of all the content currently streaming on the stage.
+
+e.g. a single page, published as HTML over HTTP 8935, show all current AV streams autoplay unmuted. Call it "montage.html".
 
 ### Run as a single process
 
