@@ -1,8 +1,37 @@
-# Future Roadmap
+# Product Roadmap
 
-This section explains some areas where this platform could be upgraded.
+This section explains some areas where the _Infinite Permissionless Digital Stage_ could be upgraded.
+
+It divides upgrades into the following categories:
+
+- Viewer Product - the tools and services available to someone **viewing content** on a Stage.
+- Publisher Product - the tools and services available to someone **publishing content** to a Stage.
+- Stage Operator Product - the tools and services available to someone **operating** a Stage.
 
 ## Viewer Product
+
+### Content Index
+
+Create an index of all content currently streaming on stage.
+
+e.g. a `.m3u8` file publised over HTTP 8935. Call it `index.m3u8`.
+
+Below is an example of what `index.m3u8` might look like:
+
+```
+#EXTM3U
+#EXT-X-VERSION:3
+#EXT-X-STREAM-INF:PROGRAM-ID=0,BANDWIDTH=16000000,RESOLUTION=3840x2160
+hello_world/source.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=0,BANDWIDTH=400000,RESOLUTION=256x144
+hello_world/P144p30fps16x9.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=0,BANDWIDTH=16000000,RESOLUTION=7680x4320
+criticaltv/source.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=0,BANDWIDTH=400000,RESOLUTION=256x144
+criticaltv/P144p30fps16x9.m3u8
+```
+
+It might also show a single manifest per stream, e.g. `hello_world.m3u8` and `criticaltv.m3u8`.
 
 ### Mobile App
 
@@ -36,13 +65,23 @@ So, for example, `publisher 0` publishes a stream of 500x500 black content
 
 ![image](https://user-images.githubusercontent.com/59374467/71674822-98bded80-2d7c-11ea-9818-25970c4c5e81.png)
 
-Then `publisher 1` publishes HELLO in red text on a transparent backgroun:
+Then `publisher 1` publishes HELLO in red text on a transparent background 500x500:
 
 ![image](https://user-images.githubusercontent.com/59374467/71674945-f6523a00-2d7c-11ea-991f-a871bae2736c.png)
 
 Then, `viewer 0` requests to watch `publisher 1`'s streaming content layered on top of `publisher 0`'s streaming content:
 
 ![hello_layered](https://user-images.githubusercontent.com/59374467/71675146-74164580-2d7d-11ea-85b9-d5847ba85ed8.png)
+
+Such a feature would allow publishers to layer their content on top of each other, potentially paving the way towards a permissionless Audio and Visual collaborative creative space on an infinite permissionless digital stage - musicians, artists, photographers, cameramen, smartphone-owners, mixing their own AV streams with other people's streams...
+
+Then if we can get money flowing into this model, divided up based on who contributed what, then we have a whole new way of funding global collaborative digital art... like a DAO++.
+
+### Content Index
+
+Create an index of all the content currently streaming on the stage.
+
+e.g. a single page, published as HTML over HTTP 8935, show all current AV streams autoplay unmuted. Call it "montage.html".
 
 ## Publisher Product
 
@@ -83,11 +122,17 @@ Rough sketch of user journey:
 
 ## Stage Operator Product
 
-### Content Index
+This section contains upgrade ideas for helping a Stage Operator to operate their stage.
 
-Create an index of all the content currently streaming on the stage.
+### Stage Registry
 
-e.g. a single page, published as HTML over HTTP 8935, show all current AV streams autoplay unmuted. Call it "montage.html".
+Create a permissionless decentralised registry of IP Addresses of Stages.
+
+This would allow any stage operator to publish the address of their stage onchain, allowing anyone to use it.
+
+For example, a stage operator might publish `10.133.65.17` as the IP address of the server which hosts the stage.
+
+Publishers and Viewers would then be able to query this registry to share content.
 
 ### Run as a single process
 
