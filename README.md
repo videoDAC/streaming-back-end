@@ -1,7 +1,7 @@
 
 # _Infinite Permissionless Digital Stage_
 
-To build a _Infinite Permissionless Digital Stage_, use the [simple build document](./BUILD.md).
+To build a _Infinite Permissionless Digital Stage_, use the [simple build document](./BUIDL.md).
 
 _Infinite Permissionless Digital Stage_ is a platform which allows anyone connected to your network to transiently stream (audio-visual) AV digital content, without permission.
 
