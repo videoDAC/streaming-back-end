@@ -24,6 +24,8 @@ Rough sketch of user journey:
   - User taps screen, this turns `off` the "TV", stop paying.
   - For first time usage, just show ETH burner address, 0 balance.
   - Maybe also show on screen balance when "TV" is `on`.
+  
+This is further discussed in [this issue](https://github.com/criticaltv/infinite-permissionless-digital-stage/issues/2).
 
 ### Critical TV Box (or dAppNode)
 
@@ -59,6 +61,10 @@ We would need to compile some binaries for the RPi, but otherwise everything els
 ### Configuring for IPv6
 
 Enable this to work over IPv6, so that individuals have better control over their privacy and security.
+
+### ENS Integration
+
+Be able to reference streams via their ENS name.
 
 ### Containerising
 
