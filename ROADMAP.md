@@ -10,7 +10,7 @@ It divides upgrades into the following categories:
 
 ## Viewer Product
 
-### Content Index
+### Stage's Content Index
 
 Create an index of all content currently streaming on stage.
 
@@ -33,7 +33,7 @@ criticaltv/P144p30fps16x9.m3u8
 
 It might also show a single manifest per stream, e.g. `hello_world.m3u8` and `criticaltv.m3u8`.
 
-### Mobile App
+### Stage Viewer Mobile App
 
 - A MVP app for this would be:
   - 1 app per channel - e.g. Critical TV Mobile App with launcher icon.
@@ -44,18 +44,34 @@ It might also show a single manifest per stream, e.g. `hello_world.m3u8` and `cr
   
 This is further discussed in [this issue](https://github.com/criticaltv/infinite-permissionless-digital-stage/issues/2).
 
-### Critical TV Box (or dAppNode)
+### StageCast Box (or on a dAppNode)
 
 A beautifully designed device, to live under or behind a TV screen. This could perhaps use a Raspberry Pi as its board. Perhaps it can attach to the wall. Also, it could integrate into something like a Google Chromecast HDMI dongle, perhaps controlled by smartphone.
 
 #### User Journey
 
-- User plugs box in to:
+- User plugs StageCast Box in to:
   - the big screen via HDMI.
   - a network cable connection with internet access.
   - a USB power supply.
-- User turns box on, playback of live streaming video __starts__
-- User turns box off, playback of live streaming video __stops__
+- User turns Stagecast Box __on__, playback of live streaming video __starts__
+- User turns Stagecast Box __off__, playback of live streaming video __stops__
+
+### Wallet Integration
+
+If the playback of content can be linked to an Ethereum wallet, this can result in peer-to-peer payment direct from viewer to publisher in real time.
+
+#### Single Channel Burner Wallet Web App
+
+Rough sketch of user journey:
+
+- User loads e.g. http://criticaltv.videodac.eth.link
+- This loads a page from IPFS containing:
+  - a Video Player
+  - a Burner Wallet
+- User presses play
+- If Burner balance > 0, play video, show balance, and pay to criticaltv.videodac.eth
+- If Burner balance = 0, do not play video, do not pay to anyone.
 
 ### Stream Layering
 
@@ -77,12 +93,6 @@ Such a feature would allow publishers to layer their content on top of each othe
 
 Then if we can get money flowing into this model, divided up based on who contributed what, then we have a whole new way of funding global collaborative digital art... like a DAO++.
 
-### Content Index
-
-Create an index of all the content currently streaming on the stage.
-
-e.g. a single page, published as HTML over HTTP 8935, show all current AV streams autoplay unmuted. Call it "montage.html".
-
 ## Publisher Product
 
 ### Rebadged OBS Studio
@@ -103,22 +113,6 @@ Some potential enhancements:
 
 - Query a dynamic onchain registry of rtmp endpoints for {server-address}, to provide publisher with list of stages they can publish on
 - Perhaps even embed an _Infinite Permissionless Digital Stage_ inside OBS, and start streaming to it when you open OBS.
-
-### Wallet Integration
-
-If the playback of content can be linked to an Ethereum wallet, this can result in peer-to-peer payment direct from viewer to publisher in real time.
-
-#### Single Channel Burner Wallet Web App
-
-Rough sketch of user journey:
-
-- User loads e.g. http://criticaltv.videodac.eth.link
-- This loads a page from IPFS containing:
-  - a Video Player
-  - a Burner Wallet
-- User presses play
-- If Burner balance > 0, play video, show balance, and pay to criticaltv.videodac.eth
-- If Burner balance = 0, do not play video, do not pay to anyone.
 
 ## Stage Operator Product
 
