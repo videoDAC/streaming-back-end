@@ -1,4 +1,4 @@
-You can create an Infinite Permissionless Digital Stage by running the following commands:
+You can create an Infinite Digital Stage by running the following commands:
 
 OPEN NEW TERMINAL WINDOW
 ```
