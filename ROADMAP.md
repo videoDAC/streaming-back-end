@@ -1,6 +1,6 @@
 # Product Roadmap
 
-This section explains some areas where the _Infinite Permissionless Digital Stage_ could be upgraded.
+This section explains some areas where the _Infinite Digital Stage_ could be upgraded.
 
 It divides upgrades into the following categories:
 
@@ -42,7 +42,7 @@ It might also show a single manifest per stream, e.g. `hello_world.m3u8` and `cr
   - For first time usage, just show ETH burner address, 0 balance.
   - Maybe also show on screen balance when "TV" is `on`.
   
-This is further discussed in [this issue](https://github.com/criticaltv/infinite-permissionless-digital-stage/issues/2).
+This is further discussed in [this issue](https://github.com/criticaltv/infinite-digital-stage/issues/2).
 
 ### StageCast Box (or on a dAppNode)
 
