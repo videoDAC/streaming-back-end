@@ -3,7 +3,7 @@
 
 To build a _Infinite Digital Stage_, use the [simple build document](./BUIDL.md).
 
-_Infinite Digital Stage_ is a platform which allows anyone connected to your network to transiently broadcast (audio-visual) AV digital content, without permission.
+_Infinite Digital Stage_ is a platform which allows anyone connected to your network to transiently broadcast (audio-visual) AV digital content.
 
 ## Specific description
 
