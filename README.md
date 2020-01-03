@@ -37,6 +37,7 @@ To operate a _Infinite Permissionless Digital Stage_, you will need:
 
 - A Linux server with three ports open to the internet (22, 1935 and 8935)
   - 1 CPU and 2GB RAM is enough to start with.
+  - Can run on a laptop or a server.
 
 - Some basic command line skills
   - SSH, screen, other general commands
