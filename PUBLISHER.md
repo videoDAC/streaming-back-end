@@ -1,6 +1,6 @@
 This section contains information relevant to a Publisher of Live AV Content.
 
-It explains how to use open and freely available software to stream content to a __Permissionless Digital Stage__.
+It explains how to use open and freely available software to stream content to an __Infinite Digital Stage__.
 
 ## Using encoder (e.g. OBS Studio) instead of -publisher
 
