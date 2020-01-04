@@ -3,7 +3,9 @@
 
 To build a _Infinite Digital Stage_, use the [simple build document](./BUIDL.md).
 
-_Infinite Digital Stage_ is a platform which allows anyone connected to your network to transiently broadcast (audio-visual) AV digital content.
+An _Infinite Digital Stage_ is a virtual space which any can "perform" on.
+
+Performances on the stage are streamed via digital Audio-Visual (AV) content.
 
 ## Specific description
 
@@ -17,7 +19,7 @@ Anyone who has access to the server can:
 
 ### Special feature
 
-The platform will also "shrink" AV digital content into "lighter" formats. This is also known as "Transcoding".
+The platform will also "shrink" digital AV content into "lighter" formats. This is also known as "Transcoding".
 
 Transcoding has the following advantages for viewers:
 
