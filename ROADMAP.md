@@ -172,6 +172,7 @@ Research needs to go into the following potential options:
 
 - Docker
 - SupervisorD
+- systemd
 
 ### Access Control
 
