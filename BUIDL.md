@@ -25,7 +25,7 @@ OPEN NEW TERMINAL WINDOW
 ```
 ffmpeg -re -f lavfi -i testsrc=size=426x240:rate=30,format=yuv420p -f lavfi -i sine -threads 1 -c:v libx264 -b:v 10000k -preset ultrafast -x264-params keyint=30 -c:a aac -f flv rtmp://127.0.0.1:1935/hello_world
 ```
-OPEN NEW TERMINAL WINDOW
+GO TO ORIGINAL TERMINAL WINDOW
 ```
 ffplay http://127.0.0.1:8935/stream/hello_world/P144p30fps16x9.m3u8
 ```
