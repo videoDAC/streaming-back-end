@@ -3,6 +3,12 @@ You can create an Infinite Digital Stage by running the following commands:
 OPEN NEW TERMINAL WINDOW
 ```
 sudo apt install ffmpeg
+ffplay http://127.0.0.1:8935/stream/hello_world/P144p30fps16x9.m3u8
+```
+This should display an error, as there is nothing playing yet.
+
+OPEN NEW TERMINAL WINDOW
+```
 wget https://github.com/livepeer/go-livepeer/releases/download/v0.5.1/livepeer-linux-amd64.tar.gz
 tar -xzf livepeer-linux-amd64.tar.gz
 ./livepeer-linux-amd64/livepeer -orchestrator -cliAddr 127.0.0.1:7936 -httpAddr 127.0.0.1:8936 -serviceAddr 127.0.0.1:8936 -orchSecret secret -v 99
