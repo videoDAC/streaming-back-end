@@ -82,7 +82,7 @@ This sections helps you to build the platform. You can see [more about the archi
 screen -DR orchestrator
 ```
 
-Note, it is not recommended to use `screen` in production. See [this issue](https://github.com/criticaltv/infinite-digital-stage/issues/5).
+Note, it is not recommended to use `screen` in production. See [this issue](https://github.com/criticaltv/infinite-digital-stage/issues/7).
 
 Note, if `screen` is not installed, use `sudo apt install screen`
 
