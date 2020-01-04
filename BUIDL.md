@@ -5,7 +5,7 @@ OPEN NEW TERMINAL WINDOW
 sudo apt install ffmpeg
 ffplay http://127.0.0.1:8935/stream/hello_world/P144p30fps16x9.m3u8
 ```
-This should display an error, as there is nothing playing yet.
+This should display an error, as the stage does not yet exist.
 
 OPEN NEW TERMINAL WINDOW
 ```
