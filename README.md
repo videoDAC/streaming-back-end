@@ -5,7 +5,7 @@ To build a _Infinite Digital Stage_, use the [simple build document](./BUIDL.md)
 
 An _Infinite Digital Stage_ is a virtual space which any can "perform" on.
 
-Performances on the stage are streamed via digital Audio-Visual (AV) content.
+Performances on the stage are streamed via digital Audio-Visual (AV) content via RTMP.
 
 ## Specific description
 
