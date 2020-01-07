@@ -25,7 +25,7 @@ Transcoding has the following advantages for viewers:
 
 - __Faster load time__ - the stream starts straight away, because less data is required (up to 900x less)
 
-- __Lower bandwidth requirements__ - making it possible to watch on slow connections (e.g. 2G, 3G, 3.5G)
+- __Works on slower internet connections__ - due to less data required to be received (e.g. can work on 2G, 3G, 3.5G)
 
 - __Works on older devices__ - as it requires less power to play back content (e.g. on old smartphones)
 
@@ -52,7 +52,7 @@ The test suite for this platform is to run the following command.
 
 `ffplay http://{server-ip-address):8935/stream/{your-key}/P144p30fps16x9.m3u8`
 
-`ffplay` is part of `ffmpeg`. You can install `ffmpeg` with `sudo apt install ffmpeg` (or use Homebrew on a Mac)
+`ffplay` is part of `ffmpeg`. You can install `ffmpeg` with `sudo apt install ffmpeg` (or use Homebrew on a Mac).
 
 __This command includes these parameters__:
 
