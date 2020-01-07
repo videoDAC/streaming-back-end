@@ -11,7 +11,7 @@ Performances on the stage are streamed via digital Audio-Visual (AV) content via
 
 Specifically, _Infinite Digital Stage_ is a server-based media streaming software platform.
 
-Anyone who has access to the server can:
+Anyone on the internet can:
 
 - stream AV content _to_ the _Infinite Digital Stage_
 
@@ -27,9 +27,9 @@ Transcoding has the following advantages for viewers:
 
 - __Lower bandwidth requirements__ - making it possible to watch on slow connections (e.g. 2G, 3G, 3.5G)
 
-- __Lower power requirements__ - making it possible to watch on weaker, older devices (e.g. old smartphones)
+- __Works on older devices__ - as it requires less power to play back content (e.g. on old smartphones)
 
-Transcoding makes it much easier for streamers to quickly reach larger audiences.
+In summary, Transcoding makes it much easier for streamers to quickly reach larger audiences.
 
 ## Installation and Testing
 
@@ -37,12 +37,14 @@ Transcoding makes it much easier for streamers to quickly reach larger audiences
 
 To operate a _Infinite Digital Stage_, you will need:
 
-- A Linux server with three ports open to the internet (22, 1935 and 8935)
+- A Linux* server with three ports open to the internet (22, 1935 and 8935)
   - 1 CPU and 2GB RAM is enough to start with.
   - Can run on a laptop or a server.
 
 - Some basic command line skills
   - SSH, screen, other general commands
+
+*can also work on a Mac, but these instructions are focussed towards Linux
 
 ### Test suite
 
@@ -50,7 +52,7 @@ The test suite for this platform is to run the following command.
 
 `ffplay http://{server-ip-address):8935/stream/{your-key}/P144p30fps16x9.m3u8`
 
-`ffplay` is part of `ffmpeg`. You can install `ffmpeg` with `sudo apt install ffmpeg`.
+`ffplay` is part of `ffmpeg`. You can install `ffmpeg` with `sudo apt install ffmpeg` (or use Homebrew on a Mac)
 
 __This command includes these parameters__:
 
@@ -77,6 +79,8 @@ This sections helps you to build the platform. You can see [more about the archi
  wget https://github.com/livepeer/go-livepeer/releases/download/v0.5.1/livepeer-linux-amd64.tar.gz
  tar -xzf livepeer-linux-amd64.tar.gz
  ```
+
+Use `livepeer-darwin...` for a Mac.
  
 - Run the following command to attach a new `screen`
 
