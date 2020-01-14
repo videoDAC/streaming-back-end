@@ -76,7 +76,7 @@ This sections helps you to build the platform. You can see [more about the archi
 - Download and unzip Livepeer:
  
  ```
- wget https://github.com/livepeer/go-livepeer/releases/download/v0.5.2/livepeer-linux-amd64.tar.gz
+ wget https://github.com/livepeer/go-livepeer/releases/download/v0.5.3/livepeer-linux-amd64.tar.gz
  tar -xzf livepeer-linux-amd64.tar.gz
  ```
 
@@ -173,19 +173,15 @@ If you test again using the Test Suite and the same `{your-key}`, you should see
 
 There is a test platform available to use to develop applications against.
 
-These are available by running these command:
+These are available by running this command:
 
-`ffplay http://52.29.226.43:8935/stream/hello_world/P144p30fps16x9.m3u8`
-
-`ffplay http://52.29.226.43:8935/stream/hello_world/source.m3u8`
-
-`ffplay http://52.29.226.43:8935/stream/current.m3u8`
+`ffplay http://54.93.169.248:8935/stream/streamflow_0_5_3.m3u8`
 
 If this signal is not working, please contact [the videoDAC community on Telegram](https://t.me/videoDAC).
 
 ## Further reading
 
-You can now learn [how to publish more interesting content onto a Digital Stage](./PUBLISHER.md).
+You can now learn [how to publish mffplay http://54.93.169.248:8935/stream/streamflow_0_5_3.m3u8ore interesting content onto a Digital Stage](./PUBLISHER.md).
 
 You can also view [the current roadmap for evolving Digital Stage](./ROADMAP.md).
 
