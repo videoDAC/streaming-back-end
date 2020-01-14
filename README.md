@@ -115,13 +115,7 @@ screen -DR transcoder
 - Run the following command in the `transcoder` screen:
 
 ```
-./livepeer-linux-amd64/livepeer
-   -transcoder
-   -cliAddr 127.0.0.1:7937
-   -httpAddr 127.0.0.1:8937
-   -orchAddr 127.0.0.1:8936
-   -orchSecret secret
-   -v 99
+./livepeer-linux-amd64/livepeer -transcoder -cliAddr 127.0.0.1:7937 -httpAddr 127.0.0.1:8937 -orchAddr 127.0.0.1:8936 -orchSecret secret -v 99
 ```
 
 - Hold `ctrl-A-D` to exit the `transcoder` screen
@@ -135,15 +129,7 @@ screen -DR broadcaster
 - Run the following command in the `broadcaster` screen:
 
 ```
-./livepeer-linux-amd64/livepeer
-   -broadcaster
-   -currentManifest
-   -cliAddr 127.0.0.1:7935 
-   -rtmpAddr 0.0.0.0:1935 
-   -httpAddr 0.0.0.0:8935 
-   -orchAddr 127.0.0.1:8936 
-   -transcodingOptions P144p30fps16x9 
-   -v 99
+./livepeer-linux-amd64/livepeer -broadcaster -currentManifest -cliAddr 127.0.0.1:7935 -rtmpAddr 0.0.0.0:1935 -httpAddr 0.0.0.0:8935 -orchAddr 127.0.0.1:8936 -transcodingOptions P144p30fps16x9 -v 99
 ```
 
 - `ctrl-A-D` to exit the `broadcaster` screen
