@@ -143,7 +143,7 @@ screen -DR publisher
 - Run the following command in the `publisher` screen:
 
 ```
-ffmpeg -re -f lavfi -i testsrc=size=426x240:rate=30,format=yuv420p -f lavfi -i sine -threads 1 -c:v libx264 -b:v 10000k -preset ultrafast -x264-params keyint=30 -strict -2 -c:a aac -f flv rtmp://127.0.0.1:1935/{your-key}
+ffmpeg -re -f lavfi -i testsrc=size=256x144:rate=30,format=yuv420p -f lavfi -i sine -threads 1 -c:v libx264 -b:v 10000k -preset ultrafast -x264-params keyint=30 -strict -2 -c:a aac -f flv rtmp://127.0.0.1:1935/{your-key}
 ```
 
 Note: When you restart the `-broadcaster`, this process will die.
@@ -161,13 +161,13 @@ There is a test platform available to use to develop applications against.
 
 These are available by running this command:
 
-`ffplay http://54.93.169.248:8935/stream/streamflow_0_5_3.m3u8`
+`ffplay http://52.29.226.43:8935/stream/hello_world/P144p30fps16x9.m3u8`
 
 If this signal is not working, please contact [the videoDAC community on Telegram](https://t.me/videoDAC).
 
 ## Further reading
 
-You can now learn [how to publish mffplay http://54.93.169.248:8935/stream/streamflow_0_5_3.m3u8ore interesting content onto a Digital Stage](./PUBLISHER.md).
+You can now learn [how to publish more interesting content onto a Digital Stage](./PUBLISHER.md).
 
 You can also view [the current roadmap for evolving Digital Stage](./ROADMAP.md).
 
