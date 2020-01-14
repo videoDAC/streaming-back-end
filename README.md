@@ -95,13 +95,7 @@ Note, if `screen` is not installed, use `sudo apt install screen`
 - Run the following command in the `orchestrator` screen:
 
 ```
-./livepeer-linux-amd64/livepeer
-   -orchestrator 
-   -cliAddr 127.0.0.1:7936  
-   -httpAddr 127.0.0.1:8936 
-   -serviceAddr 127.0.0.1:8936 
-   -orchSecret secret 
-   -v 99
+./livepeer-linux-amd64/livepeer -orchestrator -cliAddr 127.0.0.1:7936 -httpAddr 127.0.0.1:8936 -serviceAddr 127.0.0.1:8936 -orchSecret secret -v 99
 ```
 
 - `ctrl-A-D` to exit the `orchestrator` screen
