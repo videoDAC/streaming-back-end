@@ -1,4 +1,4 @@
-You can create an Infinite Digital Stage by running the following commands:
+You can create an Infinite Digital Stage on your `localhost` by running the following commands:
 
 OPEN NEW TERMINAL WINDOW
 ```
@@ -9,7 +9,7 @@ This should display an error, as the stage does not yet exist.
 
 OPEN NEW TERMINAL WINDOW
 ```
-wget https://github.com/livepeer/go-livepeer/releases/download/v0.5.3/livepeer-linux-amd64.tar.gz
+wget https://github.com/livepeer/go-livepeer/releases/download/v0.5.4/livepeer-linux-amd64.tar.gz
 tar -xzf livepeer-linux-amd64.tar.gz
 ./livepeer-linux-amd64/livepeer -orchestrator -cliAddr 127.0.0.1:7936 -httpAddr 127.0.0.1:8936 -serviceAddr 127.0.0.1:8936 -orchSecret secret -v 99
 ```
