@@ -1,0 +1,14 @@
+[Unit]
+Description=service to start a service publishing an RTMP test signal using ffmpeg to the -broadcaster service on this machine
+After=network.target
+
+[Service]
+User=ubuntu
+Type=simple
+Restart=always
+RestartSec=1s
+WorkingDirectory=/home/ubuntu/
+ExecStart=/usr/bin/ffmpeg -re -f lavfi -i testsrc=size=1920x1080:rate=30,format=yuv420p -f lavfi -i sine -threads 1 -c:v libx264 -b:v 10000k -preset ultrafast -x264-params keyint=30 -c:a aac -f flv rtmp://localhost:1935/test-signal
+
+[Install]
+WantedBy=default.target

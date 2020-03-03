@@ -1,0 +1,14 @@
+[Unit]
+Description=service to start Livepeer Orchestrator service on this machine
+After=network.target
+
+[Service]
+User=ubuntu
+Type=simple
+Restart=always
+RestartSec=1s
+WorkingDirectory=/home/ubuntu/
+ExecStart=/home/ubuntu/livepeer-linux-amd64/livepeer -orchestrator -cliAddr 127.0.0.1:7936 -httpAddr 127.0.0.1:8936 -serviceAddr 127.0.0.1:8936 -orchSecret secret -v 99
+
+[Install]
+WantedBy=default.target

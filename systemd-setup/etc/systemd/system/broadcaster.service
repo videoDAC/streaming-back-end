@@ -1,0 +1,14 @@
+[Unit]
+Description=service to start Livepeer Broadcaster service on this machine
+After=network.target
+
+[Service]
+User=ubuntu
+Type=simple
+Restart=always
+RestartSec=1s
+WorkingDirectory=/home/ubuntu/
+ExecStart=/home/ubuntu/livepeer-linux-amd64/livepeer -broadcaster -cliAddr 127.0.0.1:7935 -rtmpAddr 0.0.0.0:1935 -httpAddr 0.0.0.0:8935 -orchAddr 127.0.0.1:8936 -transcodingOptions P144p30fps16x9 -v 99
+
+[Install]
+WantedBy=default.target
