@@ -1,7 +1,7 @@
 
 # _Infinite Digital Stage_
 
-To build a _Infinite Digital Stage_, use the [simple build document](./BUIDL.md).
+If you are a seasoned devOps professional, you can build an _Infinite Digital Stage_, use the [simple build document](./BUIDL.md).
 
 An _Infinite Digital Stage_ is a virtual space which anyone can "perform" on.
 
