@@ -3,6 +3,8 @@
 
 If you are a seasoned devOps professional, you can build an _Infinite Digital Stage_, use the [simple build document](./BUIDL.md).
 
+For everyone else, read on.
+
 An _Infinite Digital Stage_ is a virtual space which anyone can "perform" on.
 
 Performances on the stage are streamed via digital Audio-Visual (AV) content via RTMP.
