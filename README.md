@@ -9,7 +9,7 @@ A/V streams are published to the Streaming Back-End via `RTMP`.
 
 A/V streams are consumed from the Streaming Back-End via `HLS` over `HTTP`.
 
-If you are a seasoned devOps professional, you may wish to use [these instructions](./BUIDL.md) to build a _Streaming Back-End_.
+If you are a seasoned devOps professional, you may wish to use [these instructions](./BUIDL.md) to build a _Streaming Back-End_. Also, you can used these [systemd setup instructions](./systemd-setup/README.md).
 
 ## Specific description
 
