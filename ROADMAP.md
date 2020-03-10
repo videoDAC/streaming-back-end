@@ -1,18 +1,18 @@
 # Product Roadmap
 
-This section explains some areas where the _Infinite Digital Stage_ could be upgraded.
+This section explains some areas where the _Streaming Back-End_ could be upgraded.
 
 It divides upgrades into the following categories:
 
-- Viewer Product - the tools and services available to someone **viewing content** on a Stage.
-- Publisher Product - the tools and services available to someone **publishing content** to a Stage.
-- Stage Operator Product - the tools and services available to someone **operating** a Stage.
+- Viewer Product - the tools and services available to someone **viewing content** on a Streaming Back-End.
+- Publisher Product - the tools and services available to someone **publishing content** to a Streaming Back-End.
+- Streaming Back-End Operator Product - the tools and services available to someone **operating** a Streaming Back-End.
 
 ## Viewer Product
 
-### Stage's Content Index
+### Streaming Back-End's Content Index
 
-Create an index of all content currently streaming on stage.
+Create an index of all content currently streaming on this Streaming Back-End.
 
 e.g. a `.m3u8` file publised over HTTP 8935. Call it `index.m3u8`.
 
@@ -33,7 +33,7 @@ criticaltv/P144p30fps16x9.m3u8
 
 It might also show a single manifest per stream, e.g. `hello_world.m3u8` and `criticaltv.m3u8`.
 
-### Stage Viewer Mobile App
+### Streaming Back-End Viewer Mobile App
 
 - A MVP app for this would be:
   - 1 app per channel - e.g. Critical TV Mobile App with launcher icon.
@@ -42,20 +42,20 @@ It might also show a single manifest per stream, e.g. `hello_world.m3u8` and `cr
   - For first time usage, just show ETH burner address, 0 balance.
   - Maybe also show on screen balance when "TV" is `on`.
   
-This is further discussed in [this issue](https://github.com/criticaltv/infinite-digital-stage/issues/2).
+This is further discussed in [this issue](https://github.com/videoDAC/streaming-back-end/issues/2).
 
-### StageCast Box (or on a dAppNode)
+### StreamCast "Box"
 
 A beautifully designed device, to live under or behind a TV screen. This could perhaps use a Raspberry Pi as its board. Perhaps it can attach to the wall. Also, it could integrate into something like a Google Chromecast HDMI dongle, perhaps controlled by smartphone.
 
 #### User Journey
 
-- User plugs StageCast Box in to:
+- User plugs StreamCast Box in to:
   - the big screen via HDMI.
   - a network cable connection with internet access.
   - a USB power supply.
-- User turns Stagecast Box __on__, playback of live streaming video __starts__
-- User turns Stagecast Box __off__, playback of live streaming video __stops__
+- User turns StreamCast Box __on__, playback of live streaming video __starts__
+- User turns StreamCast Box __off__, playback of live streaming video __stops__
 
 ### Wallet Integration
 
@@ -97,7 +97,7 @@ Then if we can get money flowing into this model, divided up based on who contri
 
 ### Rebadged OBS Studio
 
-Contribute functionality to [OBS Studio](https://obsproject.com/) which makes it really easy for publishers to stream to any available _Infinite Permissionless Digital Stage_.
+Contribute functionality to [OBS Studio](https://obsproject.com/) which makes it really easy for publishers to stream to any available _Streaming Back-End_.
 
 Some potential features of an MVP:
 
@@ -112,15 +112,15 @@ Some potential features of an MVP:
 Some potential enhancements:
 
 - Query a dynamic onchain registry of rtmp endpoints for {server-address}, to provide publisher with list of stages they can publish on
-- Perhaps even embed an _Infinite Permissionless Digital Stage_ inside OBS, and start streaming to it when you open OBS.
+- Perhaps even embed an _Streaming Back-End_ inside OBS, and start streaming to it when you open OBS.
 
-## Stage Operator Product
+## Streaming Back-End Operator Product
 
-This section contains upgrade ideas for helping a Stage Operator to operate their stage.
+This section contains upgrade ideas for helping a Streaming Back-End Operator to operate their stage.
 
-### Stage Registry
+### Streaming Back-End Registry
 
-Create a permissionless decentralised registry of IP Addresses of Stages.
+Create a permissionless decentralised registry of IP Addresses of Streaming Back-Ends.
 
 This would allow any stage operator to publish the address of their stage onchain, allowing anyone to use it.
 
@@ -130,7 +130,7 @@ Publishers and Viewers would then be able to query this registry to share conten
 
 ### Run as a single process
 
-For ease of deployment, it would be very convenient to be able to run the entire _Infinite Permissionless Digital Stage_ as a single process, e.g. by running:
+For ease of deployment, it would be very convenient to be able to run the entire _Streaming Back-End_ as a single process, e.g. by running:
 
 ```
 ./livepeer
@@ -152,7 +152,7 @@ Livepeer is an protocol providing pay-as-you-go Open-Source Video Infrastructure
 
 Livepeer's protocol and cryptocurrency govern a transcoding marketplace where broadcasters can buy and sell transcoding services from GPU Miners in exchange for Ethereum crypto currency.
 
-This section will explain how to configure your Permissionless Digital Stage to use these services.
+This section will explain how to configure your Streaming Back-End to use these services.
 
 ### Configuring for IPv6
 
