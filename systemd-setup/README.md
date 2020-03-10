@@ -11,7 +11,7 @@ This guide assumes the following:
 
 - Copy the 4 files at `./etc/systemd/system` to `/etc/systemd/system/`
   - [orchestrator.service](./etc/systemd/system/orchestrator.service)
-  - [transcoder.service](./etc/systemd/system/transcoder.service
+  - [transcoder.service](./etc/systemd/system/transcoder.service)
   - [broadcaster.service](./etc/systemd/system/broadcaster.service)
   - [publisher.service](./etc/systemd/system/publisher.service)
 
