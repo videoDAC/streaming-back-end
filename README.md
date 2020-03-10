@@ -1,4 +1,3 @@
-
 # _Streaming Back-End_
 
 A _Streaming Back-End_ is all the infrastructure required to provide a streaming platform for Audio / Video (A/V) content.
