@@ -11,9 +11,9 @@ This guide assumes the following:
 
 - Copy the 4 files at `./etc/systemd/system` to `/etc/systemd/system/`
   - [orchestrator.service](./etc/systemd/system/orchestrator.service)
-  - transcoder.service
-  - broadcaster.service
-  - publisher.service
+  - [transcoder.service](./etc/systemd/system/transcoder.service
+  - [broadcaster.service](./etc/systemd/system/broadcaster.service)
+  - [publisher.service](./etc/systemd/system/publisher.service)
 
 - Ensure you do not have these services running, for example in a `screen` as per the other instructions.
 
