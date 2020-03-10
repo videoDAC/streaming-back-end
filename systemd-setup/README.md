@@ -10,7 +10,7 @@ This guide assumes the following:
 ## Setup Intructions
 
 - Copy the 4 files at `./etc/systemd/system` to `/etc/systemd/system/`
-  - orchestrator.service
+  - [orchestrator.service](./etc/systemd/system/orchestrator.service)
   - transcoder.service
   - broadcaster.service
   - publisher.service
