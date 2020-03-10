@@ -1,23 +1,25 @@
 
-# _Infinite Digital Stage_
+# _Streaming Back-End_
 
-If you are a seasoned devOps professional, you can build an _Infinite Digital Stage_, use the [simple build document](./BUIDL.md).
+If you are a seasoned devOps professional, you can build a _Streaming Back-End_, use the [simple build document](./BUIDL.md).
 
 For everyone else, read on.
 
-An _Infinite Digital Stage_ is a virtual space which anyone can "perform" on.
+A _Streaming Back-End_ is all the infrastructure required to provide a back end steaming platform. It is optimised for live streaming, but can also handle dead streaming (streaming recorded content from a disk).
 
-Performances on the stage are streamed via digital Audio-Visual (AV) content via RTMP.
+Streams are published to the Streaming Back-End via `RTMP`.
+
+Streams are played from the Streaming Back-End via `HLS` over `HTTP`.
 
 ## Specific description
 
-Specifically, _Infinite Digital Stage_ is a server-based media streaming software platform.
+Specifically, _Streaming Back-End_ is a server-based media streaming software platform.
 
 Anyone on the internet can:
 
-- stream AV content _to_ the _Infinite Digital Stage_
+- stream AV content _to_ the _Streaming Back-End_
 
-- stream AV content _from_ the _Infinite Digital Stage_ for viewing
+- stream AV content _from_ the _Streaming Back-End_ for viewing
 
 ### Special feature
 
@@ -37,7 +39,7 @@ In summary, Transcoding makes it much easier for streamers to quickly reach larg
 
 ### What you will need
 
-To operate a _Infinite Digital Stage_, you will need:
+To operate a _Streaming Back-End_, you will need:
 
 - A Linux* server with three ports open to the internet (22, 1935 and 8935)
   - 1 CPU and 2GB RAM is enough to start with.
@@ -90,7 +92,7 @@ Use `livepeer-darwin...` for a Mac.
 screen -DR orchestrator
 ```
 
-Note, it is not recommended to use `screen` in production. See [this issue](https://github.com/criticaltv/infinite-digital-stage/issues/7).
+Note, it is not recommended to use `screen` in production. See [this issue](https://github.com/videoDAC/streaming-back-end/issues/7).
 
 Note, if `screen` is not installed, use `sudo apt install screen`
 
@@ -149,7 +151,7 @@ If you test again using the Test Suite and the same `{your-key}`, you should see
 
 ![image](https://user-images.githubusercontent.com/59374467/71633051-3a74fb80-2c12-11ea-82d7-d646022216fb.png)
 
-***IF YOU ARE SEEING THIS TEST CARD, YOU HAVE SUCCESSFULLY SET UP A DIGITAL STAGE.***
+***IF YOU ARE SEEING THIS TEST CARD, YOU HAVE SUCCESSFULLY SET UP A STREAMING BACK-END.***
 
 ## For Developing Video Applications
 
@@ -163,12 +165,12 @@ If this signal is not working, please contact [the videoDAC community on Telegra
 
 ## Further reading
 
-You can now learn [how to publish more interesting content onto a Digital Stage](./PUBLISHER.md).
+You can now learn [how to publish more interesting content onto a Streaming Back-End](./PUBLISHER.md).
 
-You can also view [the current roadmap for evolving Digital Stage](./ROADMAP.md).
+You can also view [the current roadmap for evolving Streaming Back-End](./ROADMAP.md).
 
-## About _Infinite Digital Stage_
+## About _Streaming Back-End_
 
-_Infinite Digital Stage_ is a [Video DAC](https://github.com/videodac) project, part of [Livepeer](https://github.com/livepeer) project on [Ethereum](https://github.com/ethereum).
+_Streaming Back-End_ is a [Video DAC](https://github.com/videodac) project, part of [Livepeer](https://github.com/livepeer) project on [Ethereum](https://github.com/ethereum).
 
-You can donate to Digital Stage at 0x2E8c5f8eA1E5F4d9d8c7cd02315F33cfD80eB994.
+You can donate to Streaming Back-End at 0x2E8c5f8eA1E5F4d9d8c7cd02315F33cfD80eB994.
