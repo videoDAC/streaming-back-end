@@ -1,11 +1,13 @@
 
 # _Streaming Back-End_
 
-A _Streaming Back-End_ is all the infrastructure required to provide a back end steaming platform. It is optimised for live streaming, but can also handle dead streaming (streaming recorded content from a disk).
+A _Streaming Back-End_ is all the infrastructure required to provide a streaming platform for Audio / Video (A/V) content.
 
-Streams are published to the Streaming Back-End via `RTMP`.
+It is optimised for live streaming (from camera / microphone), but can also handle dead streaming (streaming a video file from disk).
 
-Streams are played from the Streaming Back-End via `HLS` over `HTTP`.
+A/V streams are published to the Streaming Back-End via `RTMP`.
+
+A/V streams are consumed from the Streaming Back-End via `HLS` over `HTTP`.
 
 If you are a seasoned devOps professional, you may wish to use [these instructions](./BUIDL.md) to build a _Streaming Back-End_.
 
@@ -15,9 +17,9 @@ Specifically, _Streaming Back-End_ is a server-based media streaming software pl
 
 Anyone on the internet can:
 
-- stream AV content _to_ the _Streaming Back-End_
+- stream A/V content _to_ the _Streaming Back-End_
 
-- stream AV content _from_ the _Streaming Back-End_ for viewing
+- stream A/V content _from_ the _Streaming Back-End_ for viewing
 
 ### Special feature
 
@@ -52,14 +54,14 @@ To operate a _Streaming Back-End_, you will need:
 
 The test suite for this platform is to run the following command.
 
-`ffplay http://{server-ip-address):8935/stream/{your-key}/P144p30fps16x9.m3u8`
+`ffplay http://{server-ip-address):8935/stream/{your-stream-id}/P144p30fps16x9.m3u8`
 
 `ffplay` is part of `ffmpeg`. You can install `ffmpeg` with `sudo apt install ffmpeg` (or use Homebrew on a Mac).
 
 __This command includes these parameters__:
 
 - `{server-ip-address)` is the IP address of the server, which you must provide
-- `{your-key}` a string of text, without spaces, that you must create
+- `{your-stream-id}` a string of text, without spaces, that you must create
 
 SUCCESS: If the platform __is working__, you __will__ see this test-card image with a monotone audio signal, and the number will be incrementing every second:
 
@@ -139,13 +141,13 @@ screen -DR publisher
 - Run the following command in the `publisher` screen:
 
 ```
-ffmpeg -re -f lavfi -i testsrc=size=256x144:rate=30,format=yuv420p -f lavfi -i sine -threads 1 -c:v libx264 -b:v 10000k -preset ultrafast -x264-params keyint=30 -strict -2 -c:a aac -f flv rtmp://127.0.0.1:1935/{your-key}
+ffmpeg -re -f lavfi -i testsrc=size=256x144:rate=30,format=yuv420p -f lavfi -i sine -threads 1 -c:v libx264 -b:v 10000k -preset ultrafast -x264-params keyint=30 -strict -2 -c:a aac -f flv rtmp://127.0.0.1:1935/{your-stream-id}
 ```
 
 Note: When you restart the `-broadcaster`, this process will die.
-Note: `{your-key}` must be a string of text, without spaces.
+Note: `{your-stream-id}` must be a string of text, without spaces.
 
-If you test again using the Test Suite and the same `{your-key}`, you should see that the platform is working.
+If you test again using the Test Suite and the same `{your-stream-id}`, you should see that the platform is working.
 
 ![image](https://user-images.githubusercontent.com/59374467/71633051-3a74fb80-2c12-11ea-82d7-d646022216fb.png)
 
