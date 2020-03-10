@@ -1,15 +1,13 @@
 
 # _Streaming Back-End_
 
-If you are a seasoned devOps professional, you can build a _Streaming Back-End_, use the [simple build document](./BUIDL.md).
-
-For everyone else, read on.
-
 A _Streaming Back-End_ is all the infrastructure required to provide a back end steaming platform. It is optimised for live streaming, but can also handle dead streaming (streaming recorded content from a disk).
 
 Streams are published to the Streaming Back-End via `RTMP`.
 
 Streams are played from the Streaming Back-End via `HLS` over `HTTP`.
+
+If you are a seasoned devOps professional, you may wish to use [these instructions](./BUIDL.md) to build a _Streaming Back-End_.
 
 ## Specific description
 
@@ -28,7 +26,7 @@ The platform will also "shrink" digital AV content into "lighter" formats. This 
 Transcoding has the following advantages for viewers:
 
 - __Faster load time__ - the stream starts straight away, because less data is required (up to 900x less)
-
+)
 - __Works on slower internet connections__ - due to less data required to be received (e.g. can work on 2G, 3G, 3.5G)
 
 - __Works on older devices__ - as it requires less power to play back content (e.g. on old smartphones)
