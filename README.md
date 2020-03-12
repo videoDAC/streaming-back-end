@@ -60,7 +60,7 @@ The test suite for this platform is to run the following command.
 __This command includes these parameters__:
 
 - `{server-ip-address)` is the IP address of the server, which you must provide
-- `{your-stream-id}` a string of text, without spaces, that you must create
+- `{your-stream-id}` a string of text, without spaces, that you must create. It can be anything you want.
 
 SUCCESS: If the platform __is working__, you __will__ see this test-card image with a monotone audio signal, and the number will be incrementing every second:
 
