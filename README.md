@@ -2,7 +2,7 @@
 
 A _Streaming Back-End_ is all the infrastructure required to provide a streaming platform for Audio / Video (A/V) content.
 
-It is optimised for live streaming (from camera / microphone), but can also handle dead streaming (streaming a video file from disk).
+It is optimised for live streaming (from camera / microphone), but can also handle streaming a video file from disk.
 
 A/V streams are published to the Streaming Back-End via `RTMP`.
 
