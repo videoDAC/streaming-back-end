@@ -1,4 +1,4 @@
-This folder contains information about setting up your server to automatically start Infinite Digital Stage, using systemd.
+This folder contains information about setting up your server to automatically run your Streaming Back-End upon startup.
 
 ## Assumptions
 
@@ -31,7 +31,16 @@ sudo systemctl start /etc/systemd/system/publisher.service
 
 ## Validation and Testing
 
-In order to verify whether the infinite digital stage is working, run the following command on the stage's server:
+In order to verify whether the Streaming Back-End is working, run the following command on the stage's server:
 ```
 curl http://localhost:8935/stream/test-signal/P144p30fps16x9.m3u8
+```
+This should give a response like this:
+```
+#EXTM3U
+#EXT-X-VERSION:3
+#EXT-X-STREAM-INF:PROGRAM-ID=0,BANDWIDTH=4000000,RESOLUTION=640x360
+hello_world/source.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=0,BANDWIDTH=400000,RESOLUTION=256x144
+hello_world/P144p30fps16x9.m3u8
 ```
