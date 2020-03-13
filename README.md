@@ -79,7 +79,7 @@ This sections helps you to build the platform. You can see [more about the archi
 - Download and unzip Livepeer:
  
  ```
- wget https://github.com/livepeer/go-livepeer/releases/download/v0.5.3/livepeer-linux-amd64.tar.gz
+ wget https://github.com/livepeer/go-livepeer/releases/download/v0.5.5/livepeer-linux-amd64.tar.gz
  tar -xzf livepeer-linux-amd64.tar.gz
  ```
 
