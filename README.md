@@ -1,38 +1,39 @@
-# _Streaming Back-End_
+# Welcome to _Streaming Back-End_
 
-A _Streaming Back-End_ is all the infrastructure required to provide a streaming platform for Audio / Video (A/V) content.
+This document provides a recipe for creating your own Streaming Back-End.
 
-It is optimised for live streaming (from camera / microphone), but can also handle streaming a video file from disk.
+[**Shortcut**: skip to instructions for Installation and Testing](./README.md#installation-and-testing).
 
-A/V streams are published to the Streaming Back-End via `RTMP`.
+Or, to learn a little more first, read on :)
 
-A/V streams are consumed from the Streaming Back-End via `HLS` over `HTTP`.
+## Introduction
 
-If you are a seasoned devOps professional, you may wish to use [these instructions](./BUIDL.md) to build a _Streaming Back-End_. Also, you can used these [systemd setup instructions](./systemd-setup/README.md).
+A _Streaming Back-End_ is all you need to stream Audio / Video (A/V) content.
 
-## Specific description
+It is optimised for streaming live content (e.g. from camera / microphone), and can also handle streaming pre-produced A/V content from disk.
 
-Specifically, _Streaming Back-End_ is a server-based media streaming software platform.
+**Disclaimer**: by design, the **Streaming Back-End will not record** content being streamed. If you are streaming live content, you must record at source in order to guarantee it will be recorded.
+
+If you are a seasoned devOps professional, you may wish to use [these instructions](./BUIDL.md) to build a _Streaming Back-End_. Also, you can used these [systemd setup instructions](./systemd-setup/README.md), and these [Streaming Back-End upgrade instructions](./UPGRADING.md).
+
+## What is a Streaming Back-End?
+
+_Streaming Back-End_ is an open-source, free-to-use, server-based digital Audio / Video (A/V) content streaming platform.
 
 Anyone on the internet can:
 
-- stream A/V content _to_ the _Streaming Back-End_
+- publish A/V content _to_ the _Streaming Back-End_
+  - via `RTMP`
+- consume A/V content _from_ the _Streaming Back-End_
+  - via `HLS` over `HTTP`.
 
-- stream A/V content _from_ the _Streaming Back-End_ for viewing
+### Accessibility
 
-### Special feature
-
-The platform will also "shrink" digital AV content into "lighter" formats. This is also known as "Transcoding".
-
-Transcoding has the following advantages for viewers:
+A Streaming Back-End will maximise the accessibility of streaming content. It does this by "shrinking" (= transcoding) A/V content into "lighter" formats. These "lighter" formats have the following advantages for consumers of A/V content:
 
 - __Faster load time__ - the stream starts straight away, because less data is required (up to 900x less)
-)
 - __Works on slower internet connections__ - due to less data required to be received (e.g. can work on 2G, 3G, 3.5G)
-
 - __Works on older devices__ - as it requires less power to play back content (e.g. on old smartphones)
-
-In summary, Transcoding makes it much easier for streamers to quickly reach larger audiences.
 
 ## Installation and Testing
 
@@ -40,136 +41,133 @@ In summary, Transcoding makes it much easier for streamers to quickly reach larg
 
 To operate a _Streaming Back-End_, you will need:
 
-- A Linux* server with three ports open to the internet (22, 1935 and 8935)
-  - 1 CPU and 2GB RAM is enough to start with.
-  - Can run on a laptop or a server.
+- A Linux* server
+  - `1 CPU` and `2GB RAM` is enough to start with. Can be on `localhost` or VPS.
+  - Ports `22`, `1935` and `8935` accepting inbound `TCP` connections from the internet
+  - Install `FFmpeg`, `screen` and `curl` with `sudo apt install ffmpeg screen curl`
 
 - Some basic command line skills
   - SSH, screen, other general commands
 
 *can also work on a Mac, but these instructions are focussed towards Linux
 
-### Test suite
-
-The test suite for this platform is to run the following command.
-
-`ffplay http://{server-ip-address):8935/stream/{your-stream-id}/P144p30fps16x9.m3u8`
-
-`ffplay` is part of `ffmpeg`. You can install `ffmpeg` with `sudo apt install ffmpeg` (or use Homebrew on a Mac).
-
-__This command includes these parameters__:
-
-- `{server-ip-address)` is the IP address of the server, which you must provide
-- `{your-stream-id}` a string of text, without spaces, that you must create. It can be anything you want.
-
-SUCCESS: If the platform __is working__, you __will__ see this test-card image with a monotone audio signal, and the number will be incrementing every second:
-
-![image](https://user-images.githubusercontent.com/59374467/71633051-3a74fb80-2c12-11ea-82d7-d646022216fb.png)
-
-FAILURE: If the platform __is not working__, you __will not__ see the test card.
-
 ### Build the platform
 
-This sections helps you to build the platform. You can see [more about the architecture](./ARCHITECTURE.md).
+This sections helps you to build the platform.
 
 #### Build instructions
 
 - SSH to your server
 
 - Download and unzip Livepeer:
- 
- ```
- wget https://github.com/livepeer/go-livepeer/releases/download/v0.5.5/livepeer-linux-amd64.tar.gz
- tar -xzf livepeer-linux-amd64.tar.gz
- ```
-
-Use `livepeer-darwin...` for a Mac.
- 
-- Run the following command to attach a new `screen`
-
 ```
-screen -DR orchestrator
+wget https://github.com/livepeer/go-livepeer/releases/download/v0.5.5/livepeer-linux-amd64.tar.gz
+tar -xzf livepeer-linux-amd64.tar.gz
 ```
-
-Note, it is not recommended to use `screen` in production. See [this issue](https://github.com/videoDAC/streaming-back-end/issues/7).
-
-Note, if `screen` is not installed, use `sudo apt install screen`
-
-- Run the following command in the `orchestrator` screen:
-
+Note, if you are trying this on `MacOS`, use `livepeer-darwin-amd64.tar.gz`.
+ 
+- Run the following command to attach a new `screen`:
+```
+screen -DR O
+```
+(`O` is for "Orchestrator")
+ 
+- Run the following command in the `O` screen:
 ```
 ./livepeer-linux-amd64/livepeer -orchestrator -cliAddr 127.0.0.1:7936 -httpAddr 127.0.0.1:8936 -serviceAddr 127.0.0.1:8936 -orchSecret secret -v 99
 ```
 
-- `ctrl-A-D` to exit the `orchestrator` screen
+- `Ctrl-A-D` on your keyboard to exit the `O` screen
+  - Hold down `Ctrl` then hold down `A` then hold down `D`, then release.
 
 - Run the following command to attach a new `screen`
-
 ```
-screen -DR transcoder
+screen -DR T
 ```
-
-- Run the following command in the `transcoder` screen:
-
+(`T` is for "Transcoder")
+ 
+- Run the following command in the `T` screen:
 ```
 ./livepeer-linux-amd64/livepeer -transcoder -cliAddr 127.0.0.1:7937 -httpAddr 127.0.0.1:8937 -orchAddr 127.0.0.1:8936 -orchSecret secret -v 99
 ```
 
-- Hold `ctrl-A-D` to exit the `transcoder` screen
+- Hold `ctrl-A-D` to exit the `T` screen
 
 - Run the following command to attach a new `screen`
-
 ```
-screen -DR broadcaster
+screen -DR B
 ```
+(`B` is for "Broadcaster")
 
-- Run the following command in the `broadcaster` screen:
-
+- Run the following command in the `B` screen:
 ```
 ./livepeer-linux-amd64/livepeer -broadcaster -currentManifest -cliAddr 127.0.0.1:7935 -rtmpAddr 0.0.0.0:1935 -httpAddr 0.0.0.0:8935 -orchAddr 127.0.0.1:8936 -transcodingOptions P144p30fps16x9 -v 99
 ```
+Note: you can remove access for publishing remotely by instead running the above command with `-rtmpAddr 127.0.0.1:1935` instead of `-rtmpAddr 0.0.0.0:1935`.
 
-- `ctrl-A-D` to exit the `broadcaster` screen
+- `ctrl-A-D` to exit the `B` screen
 
 - Run the following command to attach a new `screen`
-
 ```
-screen -DR publisher
+screen -DR P
+```
+(`P` is for "Publisher")
+
+- Run the following command in the `P` screen:
+```
+ffmpeg -re -f lavfi -i testsrc=size=640x480:rate=30,format=yuv420p -f lavfi -i sine -threads 1 -c:v libx264 -b:v 10000k -preset ultrafast -x264-params keyint=30 -strict -2 -c:a aac -f flv rtmp://127.0.0.1:1935/hello_world
+```
+Note: if the process in the `B` `screen` is stopped, this process will also stop and will need to be restarted.
+Note: you can change `hello_world` to your own choice of stream ID.
+Note: you can re-enter any screen by running e.g. `screen -DR O` to re-enter the Orchestrator screen.
+
+### Test suite
+
+The test suite for this platform is to run the following command on the server.
+
+`curl http://127.0.0.1:8935/stream/hello_world/P144p30fps16x9.m3u8`
+Note: If you are using your own choice of stream ID, you must replace `hello_world` with your stream ID.
+
+**Test pass**: if you see something like this, it will mean that your Streaming Back-End is running:
+```
+#EXTM3U
+#EXT-X-VERSION:3
+#EXT-X-MEDIA-SEQUENCE:119802
+#EXT-X-TARGETDURATION:2
+#EXTINF:1.980,
+/stream/hello_world/P144p30fps16x9/119805.ts
+#EXTINF:1.980,
+/stream/hello_world/P144p30fps16x9/119806.ts
+#EXTINF:1.980,
+/stream/hello_world/P144p30fps16x9/119807.ts
 ```
 
-- Run the following command in the `publisher` screen:
+**Test fail**: if you **do not** see something like that...
 
-```
-ffmpeg -re -f lavfi -i testsrc=size=256x144:rate=30,format=yuv420p -f lavfi -i sine -threads 1 -c:v libx264 -b:v 10000k -preset ultrafast -x264-params keyint=30 -strict -2 -c:a aac -f flv rtmp://127.0.0.1:1935/{your-stream-id}
-```
+## Further reading
 
-Note: When you restart the `-broadcaster`, this process will die.
-Note: `{your-stream-id}` must be a string of text, without spaces.
+You can now learn how to [upgrade your Streaming Back-End to the latest version of Livepeer](./UPGRADING.md).
 
-If you test again using the Test Suite and the same `{your-stream-id}`, you should see that the platform is working.
+You can also learn how to [set your Streaming Back-End to run on server startup](./systemd-setup/README.md)
 
-![image](https://user-images.githubusercontent.com/59374467/71633051-3a74fb80-2c12-11ea-82d7-d646022216fb.png)
+You can learn more about [the architecture of a Streaming Back-End](./ARCHITECTURE.md).
 
-***IF YOU ARE SEEING THIS TEST CARD, YOU HAVE SUCCESSFULLY SET UP A STREAMING BACK-END.***
+You can learn [how to publish more interesting content onto a Streaming Back-End](./PUBLISHER.md).
 
-## For Developing Video Applications
+You can contribute to [the current roadmap for evolving Streaming Back-End](./ROADMAP.md).
 
-There is a test platform available to use to develop applications against.
+## Example Test Signal
 
-These are available by running this command:
+There is a test signal available to use to develop applications against.
+
+This is available by running this command:
 
 `ffplay http://52.29.226.43:8935/stream/hello_world/P144p30fps16x9.m3u8`
 
 If this signal is not working, please contact [the videoDAC community on Telegram](https://t.me/videoDAC).
 
-## Further reading
-
-You can now learn [how to publish more interesting content onto a Streaming Back-End](./PUBLISHER.md).
-
-You can also view [the current roadmap for evolving Streaming Back-End](./ROADMAP.md).
-
 ## About _Streaming Back-End_
 
 _Streaming Back-End_ is a [Video DAC](https://github.com/videodac) project, part of [Livepeer](https://github.com/livepeer) project on [Ethereum](https://github.com/ethereum).
 
-You can donate to Streaming Back-End at 0x2E8c5f8eA1E5F4d9d8c7cd02315F33cfD80eB994.
+You can donate to Streaming Back-End at [0xdac817294c0c87ca4fa1895ef4b972eade99f2fd](https://etherscan.io/address/0xdac817294c0c87ca4fa1895ef4b972eade99f2fd).
