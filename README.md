@@ -162,7 +162,7 @@ There is a test signal available to use to develop applications against.
 
 This is available by running this command:
 
-`ffplay http://52.29.226.43:8935/stream/hello_world/P144p30fps16x9.m3u8`
+`ffplay http://52.29.226.43:8935/stream/hello_world.m3u8`
 
 If this signal is not working, please contact [the videoDAC community on Telegram](https://t.me/videoDAC).
 
