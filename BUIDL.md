@@ -1,11 +1,15 @@
 You can create a Streaming Back-End on your `localhost` by running the following commands:
 
 OPEN NEW TERMINAL WINDOW
+Install `FFmpeg`:
 ```
 sudo apt install ffmpeg
+```
+Run this command to test the stream:
+```
 ffplay http://127.0.0.1:8935/stream/hello_world/P144p30fps16x9.m3u8
 ```
-This should display an error, as the Streaming Back-End does not yet exist.
+**Note**: this will display an error, as the Streaming Back-End does not yet exist.
 
 OPEN NEW TERMINAL WINDOW
 ```
@@ -23,9 +27,10 @@ OPEN NEW TERMINAL WINDOW
 ```
 OPEN NEW TERMINAL WINDOW
 ```
-ffmpeg -re -f lavfi -i testsrc=size=426x240:rate=30,format=yuv420p -f lavfi -i sine -threads 1 -c:v libx264 -b:v 10000k -preset ultrafast -x264-params keyint=30 -c:a aac -f flv rtmp://127.0.0.1:1935/hello_world
+ffmpeg -re -f lavfi -i testsrc=size=640x360:rate=30,format=yuv420p -f lavfi -i sine -threads 1 -c:v libx264 -b:v 10000k -preset ultrafast -x264-params keyint=30 -c:a aac -f flv rtmp://127.0.0.1:1935/hello_world
 ```
 GO TO ORIGINAL TERMINAL WINDOW
+Press up-arrow to run:
 ```
 ffplay http://127.0.0.1:8935/stream/hello_world/P144p30fps16x9.m3u8
 ```
