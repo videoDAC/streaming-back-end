@@ -49,6 +49,8 @@ To operate a _Streaming Back-End_, you will need:
 - Some basic command line skills
   - SSH, screen, other general commands
 
+If you don't have a Linux server, here is [some advice about getting a server](./GETSERVER.md).
+
 *can also work on a Mac, but these instructions are focussed towards Linux
 
 ### Build the platform
