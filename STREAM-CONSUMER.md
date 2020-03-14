@@ -37,6 +37,12 @@ It is also possible to embed more than one stream in the same html page, as demo
 
 A base html page for this is [here](./hlsjs-multi-player.html).
 
+# Pay-to-play App Template (Android)
+
+videoDAC has developed a template for creating a Pay-to-play streaming app, and publishing tpo Google Play, so that a consumer can watch on their Android smartphone, and pay per minute to play the stream.
+
+More instructions on that are in [the android repository in the videoDAC project](../../../android).
+
 # Who is the consumer?
 
 A consumer of streaming content can be in many forms:
