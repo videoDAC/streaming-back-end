@@ -11,7 +11,7 @@ sudo apt install ffmpeg curl screen
 ```
 Run this command to test the stream:
 ```
-curl http://127.0.0.1:8935/stream/hello_world/P144p30fps16x9.m3u8
+curl http://127.0.0.1:8935/stream/current.m3u8
 ```
 **Note**: this will display an error, as the Streaming Back-End does not yet exist.
 
@@ -27,7 +27,7 @@ OPEN NEW TERMINAL WINDOW
 ```
 OPEN NEW TERMINAL WINDOW
 ```
-./livepeer-linux-amd64/livepeer -broadcaster -cliAddr 127.0.0.1:7935 -rtmpAddr 127.0.0.1:1935 -httpAddr 127.0.0.1:8935 -orchAddr 127.0.0.1:8936 -transcodingOptions P144p30fps16x9 -v 99
+./livepeer-linux-amd64/livepeer -broadcaster -currentManifest -cliAddr 127.0.0.1:7935 -rtmpAddr 127.0.0.1:1935 -httpAddr 127.0.0.1:8935 -orchAddr 127.0.0.1:8936 -transcodingOptions P144p30fps16x9 -v 99
 ```
 OPEN NEW TERMINAL WINDOW
 ```
@@ -36,21 +36,17 @@ ffmpeg -re -f lavfi -i testsrc=size=640x360:rate=30,format=yuv420p -f lavfi -i s
 GO TO ORIGINAL TERMINAL WINDOW
 Press up-arrow to run:
 ```
-curl http://127.0.0.1:8935/stream/hello_world/P144p30fps16x9.m3u8
+curl http://127.0.0.1:8935/stream/current.m3u8
 ```
 
 **Test pass**: if you see something like this, it will mean that your Streaming Back-End is running:
 ```
 #EXTM3U
 #EXT-X-VERSION:3
-#EXT-X-MEDIA-SEQUENCE:119802
-#EXT-X-TARGETDURATION:2
-#EXTINF:1.980,
-/stream/hello_world/P144p30fps16x9/119805.ts
-#EXTINF:1.980,
-/stream/hello_world/P144p30fps16x9/119806.ts
-#EXTINF:1.980,
-/stream/hello_world/P144p30fps16x9/119807.ts
+#EXT-X-STREAM-INF:PROGRAM-ID=0,BANDWIDTH=4000000,RESOLUTION=640x360
+streamkey/source.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=0,BANDWIDTH=400000,RESOLUTION=256x144
+streamkey/P144p30fps16x9.m3u8
 ```
 
 **Test fail**: if you **do not** see something like the above.
