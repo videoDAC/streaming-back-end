@@ -170,6 +170,10 @@ If this signal is not working, please contact [the videoDAC community on Telegra
 
 ## About _Streaming Back-End_
 
+A Streaming Back-End is the backbone of Your Own Streaming Platform:
+
+![Screenshot from 2020-03-15 17-33-55](https://user-images.githubusercontent.com/2212651/76701081-e1cae000-66e3-11ea-977e-1510955c5e9e.png)
+
 _Streaming Back-End_ is a [Video DAC](https://github.com/videodac) project, part of [Livepeer](https://github.com/livepeer) project on [Ethereum](https://github.com/ethereum).
 
 You can donate to Streaming Back-End at [0xdac817294c0c87ca4fa1895ef4b972eade99f2fd](https://etherscan.io/address/0xdac817294c0c87ca4fa1895ef4b972eade99f2fd).
