@@ -9,15 +9,23 @@ This guide assumes the following:
 
 ## Setup Intructions
 
-- Copy the 4 files at `./etc/systemd/system` to `/etc/systemd/system/`
-  - [orchestrator.service](./etc/systemd/system/orchestrator.service)
-  - [transcoder.service](./etc/systemd/system/transcoder.service)
-  - [broadcaster.service](./etc/systemd/system/broadcaster.service)
-  - [publisher.service](./etc/systemd/system/publisher.service)
+- First ensure that you do not already have a Streaming Back-End running on your server.
+  - For example, you may have previously run it using `screen` as per the other instructions.
 
-Note: if you are viewing this in a browser, you can click each link above, and view the file. Then copy the text into a file with the same name at `/etc/systemd/system/`
+- Open Terminal
 
-- Ensure you do not have these services running, for example in a `screen` as per the other instructions.
+- Switch to the `/etc/systemd/system` folder by running
+```
+cd /etc/systemd/system
+```
+
+- Fetch the 4 files in this repository, into your system folder, by running the following commands:
+```
+wget https://github.com/videoDAC/streaming-back-end/blob/master/systemd-setup/etc/systemd/system/orchestrator.service
+wget https://github.com/videoDAC/streaming-back-end/blob/master/systemd-setup/etc/systemd/system/transcoder.service
+wget https://github.com/videoDAC/streaming-back-end/blob/master/systemd-setup/etc/systemd/system/broadcaster.service
+wget https://github.com/videoDAC/streaming-back-end/blob/master/systemd-setup/etc/systemd/system/publisher.service
+```
 
 - Run the following commands:
 ```
