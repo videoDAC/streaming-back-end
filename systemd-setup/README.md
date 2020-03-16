@@ -29,14 +29,14 @@ sudo wget https://github.com/videoDAC/streaming-back-end/blob/master/systemd-set
 
 - Run the following commands:
 ```
-sudo systemctl enable /etc/systemd/system/orchestrator.service
-sudo systemctl enable /etc/systemd/system/transcoder.service
-sudo systemctl enable /etc/systemd/system/broadcaster.service
-sudo systemctl enable /etc/systemd/system/publisher.service
-sudo systemctl start /etc/systemd/system/orchestrator.service
-sudo systemctl start /etc/systemd/system/transcoder.service
-sudo systemctl start /etc/systemd/system/broadcaster.service
-sudo systemctl start /etc/systemd/system/publisher.service
+sudo systemctl enable orchestrator.service
+sudo systemctl enable transcoder.service
+sudo systemctl enable broadcaster.service
+sudo systemctl enable publisher.service
+sudo systemctl start orchestrator.service
+sudo systemctl start transcoder.service
+sudo systemctl start broadcaster.service
+sudo systemctl start publisher.service
 ```
 
 ## Validation and Testing
