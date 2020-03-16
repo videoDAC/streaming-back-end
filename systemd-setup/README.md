@@ -6,6 +6,7 @@ This guide assumes the following:
 
 - The username for the server is `ubuntu`
 - The `livepeer` binary exists inside `/home/ubuntu/livepeer-linux-amd64/`
+- You have `wget` on your server (if not, run `sudo apt install wget`)
 
 ## Setup Intructions
 
