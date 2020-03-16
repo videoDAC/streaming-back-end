@@ -15,6 +15,8 @@ This guide assumes the following:
   - [broadcaster.service](./etc/systemd/system/broadcaster.service)
   - [publisher.service](./etc/systemd/system/publisher.service)
 
+Note: if you are viewing this in a browser, you can click each link above, and view the file. Then copy the text into a file with the same name at `/etc/systemd/system/`
+
 - Ensure you do not have these services running, for example in a `screen` as per the other instructions.
 
 - Run the following commands:
