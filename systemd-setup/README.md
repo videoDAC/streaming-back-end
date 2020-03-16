@@ -21,10 +21,10 @@ cd /etc/systemd/system
 
 - Fetch the 4 files in this repository, into your system folder, by running the following commands:
 ```
-sudo wget https://github.com/videoDAC/streaming-back-end/blob/master/systemd-setup/etc/systemd/system/orchestrator.service
-sudo wget https://github.com/videoDAC/streaming-back-end/blob/master/systemd-setup/etc/systemd/system/transcoder.service
-sudo wget https://github.com/videoDAC/streaming-back-end/blob/master/systemd-setup/etc/systemd/system/broadcaster.service
-sudo wget https://github.com/videoDAC/streaming-back-end/blob/master/systemd-setup/etc/systemd/system/publisher.service
+sudo wget https://raw.githubusercontent.com/videoDAC/streaming-back-end/master/systemd-setup/etc/systemd/system/orchestrator.service
+sudo wget https://raw.githubusercontent.com/videoDAC/streaming-back-end/master/systemd-setup/etc/systemd/system/transcoder.service
+sudo wget https://raw.githubusercontent.com/videoDAC/streaming-back-end/master/systemd-setup/etc/systemd/system/broadcaster.service
+sudo wget https://raw.githubusercontent.com/videoDAC/streaming-back-end/master/systemd-setup/etc/systemd/system/publisher.service
 ```
 
 - Run the following commands:
