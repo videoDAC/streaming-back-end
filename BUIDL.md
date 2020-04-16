@@ -52,3 +52,11 @@ streamkey/P144p30fps16x9.m3u8
 ```
 
 **Test fail**: if you **do not** see something like the above.
+
+You can also attempt to play back the video stream using `ffplay` (part of `FFmpeg`) with the following command:
+
+```
+ffplay http://127.0.0.1:8935/stream/current.m3u8
+```
+
+You may need to install `FFmpeg` first.
