@@ -57,6 +57,8 @@ If you don't have a Linux server, here is [some advice about getting a server](.
 
 This sections helps you to build the platform.
 
+![image](https://user-images.githubusercontent.com/59374467/78892333-d40c3e80-7a86-11ea-8823-5b90dc9055e1.png)
+
 #### Build instructions
 
 - SSH to your server
