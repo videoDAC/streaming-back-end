@@ -5,6 +5,7 @@ This document provides a recipe for creating your own Streaming Back-End.
 [**Shortcut**: instructions for most basic setup](https://github.com/criticaltv/go-livepeer/blob/patch-1/doc/install.md#option-1-download-pre-built-executables-from-livepeer).
 
 [**Shortcut**: skip to instructions for building from source](https://github.com/criticaltv/go-livepeer/blob/patch-1/doc/install.md#option-2-build-from-source)
+
 Or, to learn a little more first, read on :)
 
 ## Introduction
