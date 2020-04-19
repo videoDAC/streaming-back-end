@@ -160,15 +160,27 @@ You can learn [how to publish more interesting content onto a Streaming Back-End
 
 You can contribute to [the current roadmap for evolving Streaming Back-End](./ROADMAP.md).
 
-## Example Test Signal
+## videoDAC Test Signal
 
-There is a test signal available to use to develop applications against.
+### Important Note
 
-This is available by running this command:
+If you open this URL in a Desktop browser, it _may_ prompt you to download a `.m3u8` file if your browser does not support native `.hls` streams.
 
-`ffplay http://52.29.226.43:8935/stream/hello_world.m3u8`
+In this case, use a different option to play the test signal, from the options below.
 
-If this signal is not working, please contact [the videoDAC community on Telegram](https://t.me/videoDAC).
+### Test Signal
+
+There is a test signal maintained by [the videoDAC community on Telegram](https://t.me/videoDAC) at the following URL:
+
+`http://52.29.226.43:8935/stream/hello_world.m3u8`
+
+[http://52.29.226.43:8935/stream/hello_world.m3u8](http://52.29.226.43:8935/stream/hello_world.m3u8)
+
+This `URL` is a stream of `hls` video segments (`.hs` files), packaged in a `.m3u8` wrapper served over `http` over `IPv4`.
+
+This video stream can be viewed at [http://criticaltv.videodac.eth.link](http://criticaltv.videodac.eth.link), which contains a `hls.js` javascript player, served as `html` from `IPFS`, using `ENS` namespace.
+
+The URL can also be played back on any device with network access, using `ffplay http://52.29.226.43:8935/stream/hello_world.m3u8`, in [VLC Player](https://www.videolan.org/vlc/index.html) on Mobile and Desktop, or in `Chromium-based` and `Firefox-based` browsers on Mobile (alas not on Desktop, at least, not yet).
 
 ## About _Streaming Back-End_
 
