@@ -67,7 +67,7 @@ This sections helps you to build the platform.
 
 - Download and unzip Livepeer:
 ```
-wget https://github.com/livepeer/go-livepeer/releases/download/v0.5.5/livepeer-linux-amd64.tar.gz
+wget https://github.com/livepeer/go-livepeer/releases/download/v0.5.6/livepeer-linux-amd64.tar.gz
 tar -xzf livepeer-linux-amd64.tar.gz
 ```
 Note, if you are trying this on `MacOS`, use `livepeer-darwin-amd64.tar.gz`.
