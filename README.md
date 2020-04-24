@@ -80,7 +80,13 @@ screen -DR O
  
 - Run the following command in the `O` screen:
 ```
-./livepeer-linux-amd64/livepeer -orchestrator -cliAddr 127.0.0.1:7936 -httpAddr 127.0.0.1:8936 -serviceAddr 127.0.0.1:8936 -orchSecret secret -v 99
+./livepeer-linux-amd64/livepeer \
+     -orchestrator \
+     -serviceAddr 127.0.0.1:8936 \
+     -cliAddr 127.0.0.1:7936 \
+     -httpAddr 127.0.0.1:8936 \
+     -orchSecret secret \
+     -v 99
 ```
 
 - `Ctrl-A-D` on your keyboard to exit the `O` screen
@@ -94,7 +100,12 @@ screen -DR T
  
 - Run the following command in the `T` screen:
 ```
-./livepeer-linux-amd64/livepeer -transcoder -cliAddr 127.0.0.1:7937 -httpAddr 127.0.0.1:8937 -orchAddr 127.0.0.1:8936 -orchSecret secret -v 99
+./livepeer-linux-amd64/livepeer \
+     -transcoder \
+     -orchAddr 127.0.0.1:8936 \
+     -orchSecret secret -v 99 \
+     -cliAddr 127.0.0.1:7937 \
+     -httpAddr 127.0.0.1:8937 \
 ```
 
 - Hold `ctrl-A-D` to exit the `T` screen
@@ -107,7 +118,15 @@ screen -DR B
 
 - Run the following command in the `B` screen:
 ```
-./livepeer-linux-amd64/livepeer -broadcaster -currentManifest -cliAddr 127.0.0.1:7935 -rtmpAddr 0.0.0.0:1935 -httpAddr 0.0.0.0:8935 -orchAddr 127.0.0.1:8936 -transcodingOptions P144p30fps16x9 -v 99
+./livepeer-linux-amd64/livepeer \
+     -broadcaster \
+     -currentManifest \
+     -rtmpAddr 0.0.0.0:1935 \
+     -httpAddr 0.0.0.0:8935 \
+     -orchAddr 127.0.0.1:8936 \
+     -transcodingOptions P144p30fps16x9 \
+     -cliAddr 127.0.0.1:7935 \
+     -v 99
 ```
 Note: you can remove access for publishing remotely by instead running the above command with `-rtmpAddr 127.0.0.1:1935` instead of `-rtmpAddr 0.0.0.0:1935`.
 
@@ -121,7 +140,21 @@ screen -DR P
 
 - Run the following command in the `P` screen:
 ```
-ffmpeg -re -f lavfi -i testsrc=size=640x480:rate=30,format=yuv420p -f lavfi -i sine -threads 1 -c:v libx264 -b:v 10000k -preset ultrafast -x264-params keyint=30 -strict -2 -c:a aac -f flv rtmp://127.0.0.1:1935/hello_world
+ffmpeg \
+     -re \
+     -f lavfi \
+     -i testsrc=size=640x480:rate=30,format=yuv420p \
+     -f lavfi \
+     -i sine \
+     -threads 1 \
+     -c:v libx264 \
+     -b:v 10000k \
+     -preset ultrafast \
+     -x264-params keyint=30 \
+     -strict \
+     -2 \
+     -c:a aac \
+     -f flv rtmp://127.0.0.1:1935/hello_world
 ```
 Note: if the process in the `B` `screen` is stopped, this process will also stop and will need to be restarted.
 Note: you can change `hello_world` to your own choice of stream ID.
