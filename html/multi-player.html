@@ -1,0 +1,57 @@
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+--------
+STREAM 1
+--------
+
+<div class="row">
+  <div class="column">
+    <video width=640 height=360 id="video0" controls></video>
+  </div>
+</div>
+
+<script>
+  var video0 = document.getElementById('video0');
+  if(Hls.isSupported()) {
+    var hls = new Hls();
+    hls.loadSource('http://52.29.226.43:8935/stream/hello_world/source.m3u8');
+    hls.attachMedia(video0);
+    hls.on(Hls.Events.MANIFEST_PARSED,function() {
+      video0.play();
+  });
+ }
+  else if (video0.canPlayType('application/vnd.apple.mpegurl')) {
+    video0.src = 'http://52.29.226.43:8935/stream/hello_world/source.m3u8';
+    video0.addEventListener('loadedmetadata',function() {
+      video0.play();
+    });
+  }
+</script>
+
+--------
+STREAM 2
+--------
+
+<div class="row">
+  <div class="column">
+    <video width=640 height=360 id="video1" controls></video>
+  </div>
+</div>
+
+<script>
+  var video1 = document.getElementById('video1');
+  if(Hls.isSupported()) {
+    var hls = new Hls();
+    hls.loadSource('http://52.29.226.43:8935/stream/hello_world2/source.m3u8');
+    hls.attachMedia(video1);
+    hls.on(Hls.Events.MANIFEST_PARSED,function() {
+      video1.play();
+  });
+ }
+  else if (video1.canPlayType('application/vnd.apple.mpegurl')) {
+    video1.src = 'http://52.29.226.43:8935/stream/hello_world2/source.m3u8';
+    video1.addEventListener('loadedmetadata',function() {
+      video1.play();
+    });
+  }
+</script>

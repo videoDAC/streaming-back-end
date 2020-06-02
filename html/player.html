@@ -1,0 +1,36 @@
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+<div class="row">
+  <div class="column">
+    <video width=1920 height=1080 id="video0" controls></video>
+  </div>
+</div>
+
+<script>
+  function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+      vars[key] = value;
+    });
+  return vars;
+  }
+
+  var id = getUrlVars()["id"];
+  var ip = getUrlVars()["ip"];
+
+  var video0 = document.getElementById('video0');
+  if(Hls.isSupported()) {
+    var hls = new Hls();
+    hls.loadSource('http://'+ip+':8935/stream/'+id+'.m3u8');
+    hls.attachMedia(video0);
+    hls.on(Hls.Events.MANIFEST_PARSED,function() {
+      video0.play();
+  });
+ }
+  else if (video0.canPlayType('application/vnd.apple.mpegurl')) {
+    video0.src = 'http://'+ip+':8935/stream/'+id+'.m3u8';
+    video0.addEventListener('loadedmetadata',function() {
+      video0.play();
+    });
+  }
+</script>
